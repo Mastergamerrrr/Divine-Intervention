@@ -1,9 +1,8 @@
-# player script with push/pull functionality
 extends CharacterBody2D
 
 # --- Movement constants ---
-const SPEED := 50.0
-const PUSH_SPEED := 25.0     # slower when pushing
+const SPEED := 80.0
+const PUSH_SPEED := 40.0     # slower when pushing
 const JUMP_VELOCITY := -150.0
 
 # --- References ---
@@ -14,15 +13,17 @@ var is_pushing := false
 var is_grabbing := false
 var grabbed_object: RigidBody2D = null
 var grab_offset := Vector2.ZERO
-var movement_enabled: bool = true  # ADD THIS LINE
+var movement_enabled: bool = true 
 
 func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
-	# ADD THIS CHECK AT THE START
+	# ADD MOVEMENT ENABLED CHECK HERE
 	if not movement_enabled:
-		# If movement is disabled, only handle animations and exit early
+		# Only apply gravity but stop horizontal movement
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		update_animation(0)
 		move_and_slide()
@@ -87,15 +88,13 @@ func _physics_process(delta: float) -> void:
 
 	update_animation(direction)
 
-# ADD THIS METHOD
+# ADD THIS METHOD TO CONTROL MOVEMENT
 func set_movement_enabled(enabled: bool) -> void:
 	movement_enabled = enabled
-	# Optional: reset velocity when movement is disabled
+	# Reset horizontal velocity when movement is disabled
 	if not enabled:
-		velocity = Vector2.ZERO
-		# Also release any grabbed objects when movement is disabled
-		if is_grabbing:
-			release_object()
+		velocity.x = 0
+		
 
 func handle_grab_input() -> void:
 	if Input.is_action_just_pressed("grab"):

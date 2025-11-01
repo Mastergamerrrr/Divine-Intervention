@@ -93,9 +93,6 @@ func set_movement_enabled(enabled: bool) -> void:
 	# Optional: reset velocity when movement is disabled
 	if not enabled:
 		velocity = Vector2.ZERO
-		# Also release any grabbed objects when movement is disabled
-		if is_grabbing:
-			release_object()
 
 func handle_grab_input() -> void:
 	if Input.is_action_just_pressed("grab"):

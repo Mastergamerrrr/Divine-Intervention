@@ -14,7 +14,6 @@ var audio_pitch_scale: float = 2.0  # Speed up the audio
 @export var transition_enter: Transition.Type = Transition.Type.INSTANT_IN
 @export var transition_exit: Transition.Type = Transition.Type.FADE_OUT
 @export var teleport_cooldown: float = 1.0
-@export var spawn_marker_name: String = "SpawnMarker"  # Configurable marker name
 
 func _ready() -> void:
 	if is_teleporter:
@@ -58,6 +57,8 @@ func _on_animation_finished(anim_name: String):
 		anim.play("close")
 		is_open = false
 		
+		
+		
 		# Reset cooldown after everything is done
 		await get_tree().create_timer(teleport_cooldown).timeout
 		can_teleport = true
@@ -80,14 +81,8 @@ func _teleport_player():
 	# Fade to black (beginning of teleport)
 	await _fade_to_black()
 	
-	# Teleport player to the marker position if it exists, otherwise use default position
-	if target.has_node(spawn_marker_name):
-		var spawn_marker = target.get_node(spawn_marker_name)
-		player.global_position = spawn_marker.global_position
-	else:
-		# Fallback to original behavior if no marker found
-		print("Warning: No SpawnMarker found on target teleporter, using default position")
-		player.global_position = target.global_position
+	# Teleport player during black screen
+	player.global_position = target.global_position
 	
 	# Fade from black (end of teleport)
 	await _fade_from_black()
