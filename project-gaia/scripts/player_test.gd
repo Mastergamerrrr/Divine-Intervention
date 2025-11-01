@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 # --- Movement constants ---
 const SPEED := 110.0
-const PUSH_SPEED := 40.0     # slower when pushing
+const PUSH_SPEED := 50.0     # slower when pushing
 const JUMP_VELOCITY := -150.0
 
 # --- References ---

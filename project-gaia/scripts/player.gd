@@ -2,8 +2,8 @@
 extends CharacterBody2D
 
 # --- Movement constants ---
-const SPEED := 80.0
-const PUSH_SPEED := 40.0     # slower when pushing
+const SPEED := 50.0
+const PUSH_SPEED := 25.0     # slower when pushing
 const JUMP_VELOCITY := -150.0
 
 # --- References ---
@@ -122,7 +122,7 @@ func try_grab_object() -> void:
 		query.shape = shape
 		
 		# Position in front of player based on facing direction
-		var facing_dir = Vector2.RIGHT if not animated_sprite.flip_h else Vector2.LEFT
+		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
 		query.transform = Transform2D(0, global_position + facing_dir * 5)
 		query.collision_mask = 1  # Adjust to match your block's collision layer
 		query.exclude = [self]
@@ -168,7 +168,7 @@ func release_object() -> void:
 func update_grabbed_object() -> void:
 	if grabbed_object and is_instance_valid(grabbed_object):
 		# Calculate target position (slightly in front of player)
-		var facing_dir = Vector2.RIGHT if not animated_sprite.flip_h else Vector2.LEFT
+		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
 		var target_position = global_position + facing_dir * 12
 		
 		# Smoothly move the object to target position

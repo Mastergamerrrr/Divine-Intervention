@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dp87uowuihldm"]
+[gd_scene load_steps=21 format=4 uid="uid://dp87uowuihldm"]
 
 [ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ckgt01qkos88l" path="res://assets/sprites/House/New_Piskel_5.png" id="2_lnu2h"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dc30iqwinmowr" path="res://Furniture.input/toilet.tscn" id="12_trtic"]
 [ext_resource type="PackedScene" uid="uid://bxlxne7s7cos6" path="res://Furniture.input/bathtub.tscn" id="13_kvuet"]
 [ext_resource type="AudioStream" uid="uid://v4j83xgs3mkr" path="res://assets/music/Untitled song (6) (mp3cut.net).mp3" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://b1ccbfmmgtsas" path="res://interactable OBJECTS/red_block.tscn" id="16_ca42v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -430,3 +431,6 @@ volume_db = -4.039
 pitch_scale = 2.02
 autoplay = true
 bus = &"Music"
+
+[node name="RedBlock" parent="." instance=ExtResource("16_ca42v")]
+position = Vector2(768, 12)

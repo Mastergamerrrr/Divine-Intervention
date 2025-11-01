@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d1cocpwk10d25"]
+[gd_scene load_steps=15 format=3 uid="uid://d1cocpwk10d25"]
 
 [ext_resource type="Texture2D" uid="uid://0s4o8lp1jpyo" path="res://assets/sprites/House/Back_ground.png" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cvwsyla5iqnui" path="res://scripts/main_menu.gd" id="1_wu84c"]
@@ -55,63 +55,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(144, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(120, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7b55j"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(144, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5pajh"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(120, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7ex8"]
-atlas = ExtResource("6_rtw2f")
-region = Rect2(168, 48, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7b55j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flqon")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rcqid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1ajci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lgwnu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7b55j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5pajh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7ex8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp0ys"]
 bg_color = Color(0.7733656, 0.5573588, 0, 1)
 corner_radius_top_left = 15
@@ -140,19 +83,11 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(1005, 516)
+position = Vector2(1058, 279.00006)
 scale = Vector2(6.8704205, 6.5162506)
 sprite_frames = SubResource("SpriteFrames_lgwnu")
 autoplay = "default"
 frame_progress = 0.7690066
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(449.00003, 156)
-rotation = 0.48694685
-scale = Vector2(6.87042, 6.51625)
-sprite_frames = SubResource("SpriteFrames_7b55j")
-autoplay = "default"
-frame_progress = 0.20085865
 
 [node name="Panel2" type="Panel" parent="Panel"]
 layout_mode = 1
