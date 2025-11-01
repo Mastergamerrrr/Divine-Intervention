@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyl6mxjtroyok"]
+[gd_scene load_steps=10 format=3 uid="uid://dyl6mxjtroyok"]
 
 [ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_suk8b"]
-[ext_resource type="PackedScene" uid="uid://cgyr0hqr2qhiu" path="res://scenes/player.tscn" id="2_otycj"]
+[ext_resource type="PackedScene" uid="uid://dwyi87jmpqclc" path="res://scenes/player_test.tscn" id="2_e6q01"]
 [ext_resource type="FontFile" uid="uid://cf74i3h82xqoq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_d3rfe"]
 [ext_resource type="PackedScene" uid="uid://dltk80adq5a13" path="res://interactable OBJECTS/ToturialDoor.tscn" id="4_otycj"]
 [ext_resource type="AudioStream" uid="uid://du484x6wboupp" path="res://assets/music/Untitled song (5).mp3" id="5_tvsi8"]
+[ext_resource type="PackedScene" uid="uid://dubpm0drcsld0" path="res://scenes/test_guy.tscn" id="6_4wjj1"]
+[ext_resource type="PackedScene" uid="uid://b1ccbfmmgtsas" path="res://interactable OBJECTS/red_block.tscn" id="7_e6q01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_otycj"]
 texture = ExtResource("1_suk8b")
@@ -154,10 +156,10 @@ tile_set = SubResource("TileSet_tvsi8")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65536, 196608, 3, -65535, 196608, 3, -65534, 262144, 3, -65532, 262144, 3, -65531, 262144, 3, -65533, 196608, 3, -65530, 196608, 3, -65529, 262144, 3, -65528, 196608, 3, -65527, 262144, 3, -65526, 196608, 3, -65525, 196608, 3, -65524, 262144, 3, -65523, 196608, 3, -65522, 262144, 3, -65521, 196608, 3, -65520, 196608, 3, -65519, 262144, 3, -65518, 196608, 3, -65517, 196608, 3, -1, 196608, 3, -2, 196608, 3, -3, 196608, 3, -4, 196608, 3, -5, 196608, 3, -6, 196608, 3, -7, 196608, 3, -8, 196608, 3, -9, 196608, 3, -10, 196608, 3, -11, 196608, 3, -12, 196608, 3, -13, 196608, 3, -14, 196608, 3, -15, 196608, 3, -16, 196608, 3, -17, 196608, 3, -18, 196608, 3, -19, 196608, 3, -20, 196608, 3, -65516, 327680, 3, -21, 131072, 3, -65557, 589824, 2, -131093, 589824, 2, -196629, 589824, 2, -262165, 589824, 2, -327701, 589824, 2, -393237, 589824, 2, -524309, 589824, 2, -458773, 589824, 2, -589845, 589824, 2, -655381, 589824, 2, -131052, 655360, 2, -196588, 655360, 2, -262124, 655360, 2, -327660, 655360, 2, -393196, 655360, 2, -458732, 655360, 2, -524268, 655360, 2, -589804, 655360, 2, -655340, 655360, 2, -720876, 655360, 2, -720917, 131072, 2, -786412, 327680, 2, -851948, 327680, 1, -851949, 262144, 1, -786453, 131072, 1, -786452, 196608, 1, -786451, 196608, 3, -786450, 196608, 3, -786449, 196608, 3, -786448, 196608, 3, -786447, 196608, 3, -786446, 196608, 3, -786445, 196608, 3, -786444, 196608, 3, -786443, 196608, 3, -786442, 196608, 3, -786441, 196608, 3, -786440, 196608, 3, -786439, 196608, 3, -786438, 196608, 3, -786437, 196608, 3, -786436, 196608, 3, -786435, 196608, 3, -786434, 196608, 3, -786433, 196608, 3, -851968, 196608, 3, -851967, 196608, 3, -851966, 196608, 3, -851965, 196608, 3, -851964, 196608, 3, -851963, 196608, 3, -851962, 196608, 3, -851961, 196608, 3, -851960, 196608, 3, -851959, 196608, 3, -851958, 196608, 3, -851957, 196608, 3, -851956, 196608, 3, -851955, 196608, 3, -851954, 196608, 3, -851953, 196608, 3, -851952, 196608, 3, -851951, 196608, 3, -851950, 196608, 3)
 
-[node name="player" parent="." instance=ExtResource("2_otycj")]
-position = Vector2(-20, -19)
+[node name="player_test" parent="." instance=ExtResource("2_e6q01")]
+position = Vector2(-35, -19)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player_test"]
 position = Vector2(0, 4)
 offset = Vector2(0, -5)
 zoom = Vector2(3.5, 3.5)
@@ -167,17 +169,18 @@ offset_left = -156.0
 offset_top = -93.0
 offset_right = 30.0
 offset_bottom = -1.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_d3rfe")
 theme_override_font_sizes/font_size = 8
 text = "A to strafe left
 d to strafe right
 space bar to jump
-e to interact
+e to interact/dialog
 q to grab movable objects"
 uppercase = true
 
 [node name="Door" parent="." instance=ExtResource("4_otycj")]
-position = Vector2(78, -19)
+position = Vector2(112, -19)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_tvsi8")
@@ -185,3 +188,15 @@ volume_db = -10.097
 pitch_scale = 1.2
 autoplay = true
 bus = &"Music"
+
+[node name="TestGuy" parent="." instance=ExtResource("6_4wjj1")]
+position = Vector2(22, -14)
+
+[node name="RedBlock" parent="." instance=ExtResource("7_e6q01")]
+position = Vector2(-116, -13)
+
+[node name="RedBlock2" parent="." instance=ExtResource("7_e6q01")]
+position = Vector2(-106, -13)
+
+[node name="RedBlock3" parent="." instance=ExtResource("7_e6q01")]
+position = Vector2(-111, -22)

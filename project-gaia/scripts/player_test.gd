@@ -14,11 +14,20 @@ var is_pushing := false
 var is_grabbing := false
 var grabbed_object: RigidBody2D = null
 var grab_offset := Vector2.ZERO
+var movement_enabled: bool = true  # ADD THIS LINE
 
 func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
+	# ADD THIS CHECK AT THE START
+	if not movement_enabled:
+		# If movement is disabled, only handle animations and exit early
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		update_animation(0)
+		move_and_slide()
+		return
+	
 	is_pushing = false  # reset each frame
 
 	# Handle grab/release input
@@ -77,6 +86,16 @@ func _physics_process(delta: float) -> void:
 	is_pushing = pushing_this_frame
 
 	update_animation(direction)
+
+# ADD THIS METHOD
+func set_movement_enabled(enabled: bool) -> void:
+	movement_enabled = enabled
+	# Optional: reset velocity when movement is disabled
+	if not enabled:
+		velocity = Vector2.ZERO
+		# Also release any grabbed objects when movement is disabled
+		if is_grabbing:
+			release_object()
 
 func handle_grab_input() -> void:
 	if Input.is_action_just_pressed("grab"):

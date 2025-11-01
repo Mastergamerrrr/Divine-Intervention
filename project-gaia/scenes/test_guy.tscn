@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://dubpm0drcsld0"]
 
-[ext_resource type="Script" path="res://Scripts/test_guy.gd" id="1_0mesk"]
+[ext_resource type="Script" uid="uid://cxdphf2hyid1p" path="res://Scripts/test_guy.gd" id="1_0mesk"]
 [ext_resource type="Texture2D" uid="uid://c81x4rkbetjhd" path="res://assets/sprites/character/Soldier-Idle.png" id="2_bm1o5"]
-[ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://interaction/interaction area/interaction_area.tscn" id="3_n8blh"]
+[ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://Interaction/interaction area/interaction_area.tscn" id="3_n8blh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bh1v4"]
 atlas = ExtResource("2_bm1o5")
@@ -58,6 +58,8 @@ animations = [{
 size = Vector2(70, 18)
 
 [node name="TestGuy" type="Node2D"]
+light_mask = 524288
+visibility_layer = 524288
 script = ExtResource("1_0mesk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -69,5 +71,7 @@ frame_progress = 0.757644
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+light_mask = 524288
+visibility_layer = 524288
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_b8piu")

@@ -2,11 +2,20 @@ extends Node2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-const speech_sound = preload("res://Assests/sounds/just-sans-talking.wav")
+const speech_sound = preload("res://assets/SFX/just-sans-talking.wav")
 
 const lines: Array[String] = [
-	"Hey There Adventurer Welcome",
-	"your gay!"
+	"Hey There You Must Be...",
+	"A Lost Soul!","This Is The Purgatory My Friend",
+	"If You Wish To Ascend To Heaven",
+	"You Must Do Something Good",
+	"In The Human World!","But In Order For You To Intervene",
+	"You Must Take A Physical Body","Don't Worry I Got You Covered",
+	"There Is A Child Who Needs Help","He Is Left By His Mother",
+	"In The House To Go Somewhere", "It Has Been 2 Days",
+	"And The Mother Has Not Come Home","The Child Is Starving!",
+	"Find A Way","To Get External Help","Now Go Enter The Door!",
+	"GOOD LUCK!"
 ]
 
 func _ready() -> void:
