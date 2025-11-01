@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbqk68k5akk6i"]
+
+[ext_resource type="Script" uid="uid://dx6cbd3vay2gn" path="res://scripts/teddy_bear.gd" id="1_8uq2m"]
+[ext_resource type="Texture2D" uid="uid://dbw2gehoxi3gw" path="res://assets/sprites/character/Untitled26_20251028215202.png" id="1_c5ch4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlp7y"]
+atlas = ExtResource("1_c5ch4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st5d1"]
+atlas = ExtResource("1_c5ch4")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uq2m"]
+atlas = ExtResource("1_c5ch4")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlp7y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlp7y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st5d1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uq2m")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"No_Ghost",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tysc2"]
+size = Vector2(12, 13.5)
+
+[node name="Teddy Bear" type="CharacterBody2D"]
+script = ExtResource("1_8uq2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jlp7y")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5.25)
+shape = SubResource("RectangleShape2D_tysc2")

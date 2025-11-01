@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://m8yodubdtto8"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_ipvyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(18, 28)
+
+[node name="Fridge" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ipvyg")
+region_enabled = true
+region_rect = Rect2(65, 8, 14, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_akt7f")

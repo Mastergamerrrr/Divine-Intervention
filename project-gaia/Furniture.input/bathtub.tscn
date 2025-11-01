@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxlxne7s7cos6"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_gux1d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gux1d"]
+size = Vector2(13.9423065, 1.9230745)
+
+[node name="Bathtub" type="StaticBody2D"]
+scale = Vector2(1.3, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_gux1d")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(47.91915, 51.34629, 23.350876, 28.787964)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 6
+position = Vector2(0, 15.384617)
+scale = Vector2(0.80000013, 0.80000013)
+shape = SubResource("RectangleShape2D_gux1d")

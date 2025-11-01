@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bce52yb2emj64"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_eyi4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(34, 2)
+
+[node name="Shelf" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_eyi4x")
+region_enabled = true
+region_rect = Rect2(40, 8, 24, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_akt7f")
+one_way_collision = true

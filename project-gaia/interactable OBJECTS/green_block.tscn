@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbuxrxvks6bk7"]
+
+[ext_resource type="Texture2D" uid="uid://daouscjpm8eag" path="res://assets/sprites/Blocks/green_block.png" id="1_3s2qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c58ey"]
+size = Vector2(8, 8)
+
+[node name="greenblock" type="RigidBody2D"]
+collision_layer = 19
+collision_mask = 19
+mass = 2.0
+lock_rotation = true
+linear_damp = 3.0
+angular_damp = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3s2qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c58ey")

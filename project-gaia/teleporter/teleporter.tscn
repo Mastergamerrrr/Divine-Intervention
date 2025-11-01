@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://beudamhbceorp"]
+
+[ext_resource type="Script" uid="uid://cnuxju0tl6cry" path="res://teleporter/teleporter.gd" id="1_ky83x"]
+[ext_resource type="Texture2D" uid="uid://p0m8omloii3b" path="res://teleporter/icon_teleporter.png" id="2_111yd"]
+
+[node name="teleporter" type="Area2D"]
+script = ExtResource("1_ky83x")
+
+[node name="IconTeleporter" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_111yd")
