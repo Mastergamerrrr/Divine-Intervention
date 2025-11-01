@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://22c4md0jk05e"
+path="res://.godot/imported/Untitled song (2).mp3-36a1d0a87bcf4415162bf7059dc7a246.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Untitled song (2).mp3"
+dest_files=["res://.godot/imported/Untitled song (2).mp3-36a1d0a87bcf4415162bf7059dc7a246.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

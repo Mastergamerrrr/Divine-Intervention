@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://dubpm0drcsld0"]
+
+[ext_resource type="Script" path="res://Scripts/test_guy.gd" id="1_0mesk"]
+[ext_resource type="Texture2D" uid="uid://c81x4rkbetjhd" path="res://assets/sprites/character/Soldier-Idle.png" id="2_bm1o5"]
+[ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://interaction/interaction area/interaction_area.tscn" id="3_n8blh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh1v4"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuqo7"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssksk"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ye5"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru585"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwsjs"]
+atlas = ExtResource("2_bm1o5")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f07vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh1v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuqo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssksk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ye5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru585")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwsjs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8piu"]
+size = Vector2(70, 18)
+
+[node name="TestGuy" type="Node2D"]
+script = ExtResource("1_0mesk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f07vo")
+autoplay = "default"
+frame_progress = 0.757644
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_n8blh")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_b8piu")

@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://dltk80adq5a13"]
+
+[ext_resource type="Texture2D" uid="uid://msc13emhg4dy" path="res://assets/sprites/House/Door_Front_Right.png" id="1_lldgn"]
+[ext_resource type="Script" uid="uid://b3mdqjh7ch64y" path="res://scripts/toturial_door.gd" id="1_vn7hy"]
+[ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://Interaction/interaction area/interaction_area.tscn" id="2_o42av"]
+[ext_resource type="Texture2D" uid="uid://cbp0y57t55c8e" path="res://assets/sprites/House/Door_Side_Left.png" id="3_4ck1k"]
+[ext_resource type="AudioStream" uid="uid://ble2yav7j5ghu" path="res://assets/SFX/opening-door-411632.wav" id="4_hen5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgbum"]
+size = Vector2(11, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b6"]
+size = Vector2(22, 21)
+
+[sub_resource type="Animation" id="Animation_la1wf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_lldgn")]
+}
+
+[sub_resource type="Animation" id="Animation_18pbm"]
+resource_name = "close"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.5, 0), Vector2(0.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_4ck1k"), ExtResource("1_lldgn")]
+}
+
+[sub_resource type="Animation" id="Animation_uvdjg"]
+resource_name = "open"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1e-05),
+"update": 0,
+"values": [Vector2(0.5, 0), Vector2(-2.5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_lldgn"), ExtResource("3_4ck1k")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83dcw"]
+_data = {
+&"RESET": SubResource("Animation_la1wf"),
+&"close": SubResource("Animation_18pbm"),
+&"open": SubResource("Animation_uvdjg")
+}
+
+[node name="totdoor" type="StaticBody2D"]
+z_index = 2
+script = ExtResource("1_vn7hy")
+metadata/_edit_vertical_guides_ = [-5.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.05, 1)
+texture = ExtResource("1_lldgn")
+offset = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15.75)
+shape = SubResource("RectangleShape2D_kgbum")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_o42av")]
+action_name = "toggle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_pg2b6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_83dcw")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hen5v")
+pitch_scale = 0.54

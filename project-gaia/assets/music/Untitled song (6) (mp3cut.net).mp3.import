@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://v4j83xgs3mkr"
+path="res://.godot/imported/Untitled song (6) (mp3cut.net).mp3-0a530e0edb864fb10e562e1f31005bbe.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Untitled song (6) (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Untitled song (6) (mp3cut.net).mp3-0a530e0edb864fb10e562e1f31005bbe.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
