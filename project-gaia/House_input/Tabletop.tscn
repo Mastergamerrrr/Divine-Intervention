@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4nsu6wvwjttn"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_qf5hy"]
+
+[node name="Tabletop" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qf5hy")
+region_enabled = true
+region_rect = Rect2(55.950474, 31.890484, 24.049526, 8.1370125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

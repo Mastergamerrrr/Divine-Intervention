@@ -104,6 +104,8 @@ _data = {
 
 [node name="Door" type="StaticBody2D"]
 z_index = 2
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("1_la1wf")
 metadata/_edit_vertical_guides_ = [-5.0]
 
@@ -118,6 +120,7 @@ position = Vector2(2, 33.25)
 shape = SubResource("RectangleShape2D_kgbum")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_18pbm")]
+collision_mask = 65536
 action_name = "toggle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

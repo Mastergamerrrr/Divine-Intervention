@@ -138,7 +138,7 @@ func try_grab_object() -> void:
 		# Position in front of player based on facing direction
 		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
 		query.transform = Transform2D(0, global_position + facing_dir * 5)
-		query.collision_mask = 1  # Adjust to match your block's collision layer
+		query.collision_mask = 2  # Adjust to match your block's collision layer
 		query.exclude = [self]
 		
 		var results = space_state.intersect_shape(query, 1)

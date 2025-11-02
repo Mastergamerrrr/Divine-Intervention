@@ -246,7 +246,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="TestGuy" parent="." instance=ExtResource("6_4wjj1")]
-position = Vector2(22, -14)
+position = Vector2(33, -18)
 
 [node name="RedBlock" parent="." instance=ExtResource("7_e6q01")]
 position = Vector2(-116, -13)

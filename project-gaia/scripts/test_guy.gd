@@ -11,6 +11,8 @@ const lines: Array[String] = [
 	"You Must Do Something Good",
 	"In The Human World!","But In Order For You To Intervene",
 	"You Must Take A Physical Body","Don't Worry I Got You Covered",
+	"Though It Might Be","A Bit Small...","Just Find Ways To Reach Things",
+	"Anyways",
 	"There Is A Child Who Needs Help","He Is Left By His Mother",
 	"In The House To Go Somewhere", "It Has Been 2 Days",
 	"And The Mother Has Not Come Home","The Child Is Starving!",

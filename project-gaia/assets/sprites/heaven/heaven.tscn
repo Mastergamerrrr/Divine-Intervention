@@ -1,0 +1,255 @@
+[gd_scene load_steps=16 format=3 uid="uid://bd5cvyvwhjsh1"]
+
+[ext_resource type="Texture2D" uid="uid://dshgx1d28te32" path="res://assets/sprites/Blocks/Space Background (2).png" id="1_1t1ye"]
+[ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="2_7j6ka"]
+[ext_resource type="FontFile" uid="uid://0b4qcgqtmnis" path="res://assets/fonts/superstar_memesbruh03.ttf" id="2_vc1vw"]
+[ext_resource type="AudioStream" uid="uid://dbk23bi3pv62e" path="res://assets/SFX/Untitled song (6).mp3" id="4_yhvbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4af2q"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sy8i"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(0, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf0db"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vc7h"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sjay"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsirv"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1jrb"]
+atlas = ExtResource("2_7j6ka")
+region = Rect2(120, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp2vg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4af2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sy8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf0db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vc7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sjay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsirv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1jrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_yhvbb"]
+resource_name = "Credits"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 16.166666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -2.32), Vector2(0, -1473.39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 4.266667, 8.233334, 11.933333, 16.523434, 19.766668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(132.99998, 102.99999), Vector2(900, 103), Vector2(900, 500), Vector2(100, 450), Vector2(132.99998, 102.99999), Vector2(581.47, 322.945)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 3.9340541, 4.2333336, 7.6333337, 8.246344, 9.033334, 11.933333, 16.539371, 19.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.80634211442138, 1.7278759594743862, 2.4556782575560216, 3.2620203719774015, 2.4556782575560216, -1.509709802975095, -5.365142120630568, 6.110397711232148, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(19.033333, 19.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_at08w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(132.99998, 102.99999)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("label2:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_at08w"]
+_data = {
+&"Credits": SubResource("Animation_yhvbb"),
+&"RESET": SubResource("Animation_at08w")
+}
+
+[node name="Heaven" type="CanvasLayer"]
+metadata/_edit_horizontal_guides_ = [338.0]
+metadata/_edit_vertical_guides_ = [577.0]
+
+[node name="SpaceBackground(2)" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(670, 977)
+scale = Vector2(10.48, 9.819)
+texture = ExtResource("1_1t1ye")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(132.99998, 102.99999)
+scale = Vector2(4.02, 4.02)
+sprite_frames = SubResource("SpriteFrames_bp2vg")
+autoplay = "default"
+frame_progress = 0.3453686
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_at08w")
+}
+autoplay = "Credits"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 660.0
+offset_right = 1156.0
+offset_bottom = 1602.0
+theme_override_fonts/font = ExtResource("2_vc1vw")
+theme_override_font_sizes/font_size = 32
+text = "Credits
+
+Game Idea: KIM navaja
+
+Developer:Jian laborte
+
+assets: gian michael
+
+pixel art: bien gien
+
+world design: Kim zarate
+
+special thanks: kaina lucero
+
+
+art: Joshua potot
+
+assets used:
+
+Penzilla Design(HOUSE interior)
+Penzilla Design(Pixel protagonist)
+soundtrap(backround music)
+pixabay(sfx)
+
+
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_yhvbb")
+autoplay = true
+
+[node name="label2" type="Label" parent="."]
+offset_left = 196.0
+offset_top = 212.0
+offset_right = 973.0
+offset_bottom = 344.0
+theme_override_fonts/font = ExtResource("2_vc1vw")
+theme_override_font_sizes/font_size = 88
+text = "Thanks for playing!!"

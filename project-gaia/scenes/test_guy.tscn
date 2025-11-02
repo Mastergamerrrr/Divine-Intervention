@@ -53,7 +53,7 @@ script = ExtResource("1_0mesk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
-scale = Vector2(0.62, 0.62)
+scale = Vector2(0.83, 0.83)
 sprite_frames = SubResource("SpriteFrames_f07vo")
 autoplay = "default"
 frame_progress = 0.8304781
