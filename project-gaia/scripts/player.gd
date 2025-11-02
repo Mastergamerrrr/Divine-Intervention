@@ -106,18 +106,33 @@ func handle_grab_input() -> void:
 			release_object()
 
 func try_grab_object() -> void:
-	# Check for nearby RigidBody2D objects in front of player using area detection
-	var grab_area = $GrabArea  # We'll add this Area2D node
+	# Check for nearby RigidBody2D objects using grab area
+	var grab_area = $GrabArea
 	
-	# If we don't have a grab area, use overlap query
-	if not grab_area:
-		# Alternative method: check area around player
+	if grab_area:
+		# Use the grab area method
+		var bodies = grab_area.get_overlapping_bodies()
+		var closest_object = null
+		var closest_distance = 9999
+		
+		# Find the closest grabbable object
+		for body in bodies:
+			if body is RigidBody2D and body != self:
+				var distance = global_position.distance_to(body.global_position)
+				if distance < closest_distance:
+					closest_distance = distance
+					closest_object = body
+		
+		if closest_object:
+			grab_object(closest_object)
+	else:
+		# Fallback to old method if no grab area exists
 		var space_state = get_world_2d().direct_space_state
 		var query = PhysicsShapeQueryParameters2D.new()
 		
 		# Create a small detection area in front of player
 		var shape = RectangleShape2D.new()
-		shape.size = Vector2(10, 10)
+		shape.size = Vector2(6, 12)
 		query.shape = shape
 		
 		# Position in front of player based on facing direction
@@ -131,13 +146,6 @@ func try_grab_object() -> void:
 		for result in results:
 			if result.collider is RigidBody2D:
 				grab_object(result.collider)
-				break
-	else:
-		# Use the grab area method
-		var bodies = grab_area.get_overlapping_bodies()
-		for body in bodies:
-			if body is RigidBody2D and body != self:
-				grab_object(body)
 				break
 
 func grab_object(obj: RigidBody2D) -> void:
@@ -168,7 +176,7 @@ func update_grabbed_object() -> void:
 	if grabbed_object and is_instance_valid(grabbed_object):
 		# Calculate target position (slightly in front of player)
 		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
-		var target_position = global_position + facing_dir * 12
+		var target_position = global_position + facing_dir * 8
 		
 		# Smoothly move the object to target position
 		grabbed_object.global_position = target_position

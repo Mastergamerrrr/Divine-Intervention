@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://k7g1u7ke6wig"]
+
+[ext_resource type="Texture2D" uid="uid://doh7bvn0rb767" path="res://assets/sprites/character/bear.png" id="1_gt8aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8aj"]
+size = Vector2(2, 6)
+
+[node name="BABYBOTTLE" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("1_gt8aj")
+region_enabled = true
+region_rect = Rect2(79.270164, 32.48908, 8.3211975, 15.740932)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gt8aj")
