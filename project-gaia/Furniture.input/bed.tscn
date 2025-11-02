@@ -8,7 +8,7 @@ size = Vector2(34, 1)
 [node name="Bed" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_akt7f")
 flip_h = true
 region_enabled = true

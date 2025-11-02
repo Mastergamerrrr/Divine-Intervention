@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://ble2yav7j5ghu" path="res://assets/SFX/opening-door-411632.wav" id="5_vn3n7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgbum"]
-size = Vector2(11, 0.5)
+size = Vector2(16, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b6"]
-size = Vector2(22, 21)
+size = Vector2(9, 6)
 
 [sub_resource type="Animation" id="Animation_la1wf"]
 length = 0.001
@@ -108,19 +108,19 @@ script = ExtResource("1_la1wf")
 metadata/_edit_vertical_guides_ = [-5.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.05, 1)
+scale = Vector2(2.1, 2)
 texture = ExtResource("1_83dcw")
 offset = Vector2(0.5, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15.75)
+position = Vector2(3, 40)
 shape = SubResource("RectangleShape2D_kgbum")
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_18pbm")]
 action_name = "toggle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(1, 1.5)
+position = Vector2(5.5, 7)
 shape = SubResource("RectangleShape2D_pg2b6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

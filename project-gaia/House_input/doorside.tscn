@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://behygng22pla3"]
+
+[ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_gcmr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(34, 0)
+
+[node name="Bed" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_gcmr1")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(55.82496, 72.6139, 15.533257, 23.3861)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_akt7f")
+one_way_collision = true
