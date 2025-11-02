@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdqbmfo8s8p4m"]
+
+[ext_resource type="Texture2D" uid="uid://doh7bvn0rb767" path="res://assets/sprites/character/bear.png" id="1_htn3k"]
+[ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://Interaction/interaction area/interaction_area.tscn" id="2_dyrao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejmuc"]
+size = Vector2(24, 18)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_htn3k")
+region_enabled = true
+region_rect = Rect2(97.8545, 32.864746, 19.105186, 15.187439)
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_dyrao")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ejmuc")
