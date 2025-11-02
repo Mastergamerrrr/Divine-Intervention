@@ -10,7 +10,8 @@ extends Node2D
 const lines: Array[String] = [
 	"me want food", 
 	"me want to music box",
-	"I want my mommy"
+	"I want my mommy","call my  Mommy","Her room...",
+	"Iz cownectid to de vents"
 ]
 
 var has_food: bool = false
@@ -31,9 +32,13 @@ func _on_interact():
 	elif has_food && !has_music_box:
 		current_line_index = 1
 	else:
-		current_line_index = 2
+		# After getting both items, show lines 2, 3, 4, 5 in sequence
+		if current_line_index < 2:
+			current_line_index = 2
+		else:
+			current_line_index = min(current_line_index + 1, lines.size() - 1)
 	
-	# Show the appropriate dialog line - FIX THIS LINE:
+	# Show the appropriate dialog line
 	var current_lines: Array[String] = [lines[current_line_index]]
 	
 	DialogManager.start_dialog(global_position, current_lines, null)

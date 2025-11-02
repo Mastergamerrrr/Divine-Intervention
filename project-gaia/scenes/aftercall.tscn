@@ -1,18 +1,164 @@
-[gd_scene format=3 uid="uid://dcrnnabnd2886"]
+[gd_scene load_steps=9 format=3 uid="uid://dcrnnabnd2886"]
+
+[ext_resource type="Script" uid="uid://bb18icxojl1eq" path="res://scripts/aftercall.gd" id="1_3jmf4"]
+[ext_resource type="Texture2D" uid="uid://3x7e80lhebnh" path="res://assets/sprites/Blocks/masterbed.jpg" id="1_170q5"]
+[ext_resource type="FontFile" uid="uid://0b4qcgqtmnis" path="res://assets/fonts/superstar_memesbruh03.ttf" id="1_u3xx6"]
+[ext_resource type="AudioStream" uid="uid://ciyev6tqj14lh" path="res://assets/SFX/computer-mouse-click-352734.mp3" id="2_08xti"]
+[ext_resource type="AudioStream" uid="uid://cim15xqvlkb5v" path="res://assets/SFX/police-sirensfar-60810.mp3" id="2_14ca6"]
+
+[sub_resource type="Animation" id="Animation_170q5"]
+resource_name = "cutscene"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1666667, 2.3033333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333336, 2.2333333),
+"transitions": PackedFloat32Array(1, 0.1830108),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.1, 5.0666666, 7.7000003, 10.533333, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.3, 7.9, 10.666667, 12.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["The kid was saved at last — a heartbreaking truth emerged: the mother had left after a bitter divorce, and no one else had wanted the child.", "You did well lost soul...", "Now the heavens are waiting for your arrival...", ""]
+}
+
+[sub_resource type="Animation" id="Animation_08xti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_14ca6"]
+_data = {
+&"RESET": SubResource("Animation_08xti"),
+&"cutscene": SubResource("Animation_170q5")
+}
 
 [node name="Aftercall" type="CanvasLayer"]
+script = ExtResource("1_3jmf4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
 offset_left = -53.0
 offset_top = -33.0
 offset_right = 1206.0
 offset_bottom = 705.0
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 567.0
-offset_top = 300.0
-offset_right = 607.0
-offset_bottom = 323.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 137.0
+offset_right = 1015.0
+offset_bottom = 546.0
+theme_override_fonts/font = ExtResource("1_u3xx6")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Masterbed" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576.5, 321.75)
+scale = Vector2(1.0880681, 1.1326889)
+texture = ExtResource("1_170q5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_14ca6")
+}
+autoplay = "cutscene"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_08xti")
+volume_db = 20.53
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_14ca6")

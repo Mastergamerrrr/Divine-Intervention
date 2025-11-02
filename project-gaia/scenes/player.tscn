@@ -96,6 +96,7 @@ position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 3.5)

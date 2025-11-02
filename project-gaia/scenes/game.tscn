@@ -372,7 +372,6 @@ tile_set = SubResource("TileSet_lnu2h")
 [node name="Midground" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
 position = Vector2(-21, -1)
-tile_map_data = PackedByteArray("AABYAOP/BQAAAAMAAAA=")
 tile_set = SubResource("TileSet_lnu2h")
 
 [node name="background2" type="TileMapLayer" parent="TileMap"]
@@ -443,6 +442,16 @@ collision_mask = 65
 
 [node name="RedBlock" parent="Bedroom" instance=ExtResource("16_ca42v")]
 position = Vector2(363, -75)
+collision_layer = 3
+collision_mask = 3
+
+[node name="RedBlock3" parent="Bedroom" instance=ExtResource("16_ca42v")]
+position = Vector2(1127, -21)
+collision_layer = 3
+collision_mask = 3
+
+[node name="RedBlock4" parent="Bedroom" instance=ExtResource("16_ca42v")]
+position = Vector2(1164, -12)
 collision_layer = 3
 collision_mask = 3
 
@@ -747,4 +756,4 @@ autoplay = true
 bus = &"Music"
 
 [node name="Telephone" parent="." instance=ExtResource("30_sgl2t")]
-position = Vector2(434, -15)
+position = Vector2(385, -223)

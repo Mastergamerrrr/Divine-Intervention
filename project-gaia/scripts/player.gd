@@ -174,9 +174,14 @@ func release_object() -> void:
 
 func update_grabbed_object() -> void:
 	if grabbed_object and is_instance_valid(grabbed_object):
-		# Calculate target position (slightly in front of player)
+		# Calculate target position (above and slightly in front of player)
 		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
-		var target_position = global_position + facing_dir * 8
+		
+		# Adjust these values to change the carry position:
+		var horizontal_offset = 8   # How far in front/behind the player
+		var vertical_offset = 7   # How far above the player (negative = up)
+		
+		var target_position = global_position + (facing_dir * horizontal_offset) + (Vector2.UP * vertical_offset)
 		
 		# Smoothly move the object to target position
 		grabbed_object.global_position = target_position

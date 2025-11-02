@@ -3,7 +3,7 @@ extends StaticBody2D
 @onready var aud: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var aud2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 @onready var aud3: AudioStreamPlayer2D = $AudioStreamPlayer2D3
-@export var target_scene: String = ""
+@export var target_scene: String = "res://scenes/aftercall.tscn"
 
 # Reference to the InteractionArea child
 @onready var interaction_area: InteractionArea = $InteractionArea
