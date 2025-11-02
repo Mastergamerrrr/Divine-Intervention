@@ -93,10 +93,10 @@ animations = [{
 "duration": 1.11,
 "texture": SubResource("AtlasTexture_3r0ni")
 }, {
-"duration": 0.71,
+"duration": 0.21,
 "texture": SubResource("AtlasTexture_fxvcf")
 }, {
-"duration": 0.91,
+"duration": 0.71,
 "texture": SubResource("AtlasTexture_s2a36")
 }, {
 "duration": 0.61,
@@ -231,6 +231,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AnimatableBody2D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_ex8h3"]
 resource_name = "fadeout"
@@ -268,10 +280,22 @@ tracks/2/path = NodePath("../AnimatableBody2D2:offset")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.16666667, 2.5666666),
+"times": PackedFloat32Array(0.16666667, 1.8333334, 1.9666667, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-106.705, 0), Vector2(-24.314, 0), Vector2(-19.189, -11.851), Vector2(9.72, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimatableBody2D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.8333334, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-106.705, 0), Vector2(9.72, 0)]
+"values": [0.0, 0.2303834612632513]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghj5q"]
@@ -293,7 +317,7 @@ offset_bottom = 957.0
 color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
 
 [node name="AnimatableBody2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(511.00003, 276)
+position = Vector2(490, 276)
 scale = Vector2(5.2083335, 5.0833335)
 sprite_frames = SubResource("SpriteFrames_iubfk")
 autoplay = "default"
