@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_yxbqo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0s7m"]
-size = Vector2(12.800002, 3.2000017)
+size = Vector2(16.000002, 0.3999982)
 
 [node name="Oven" type="StaticBody2D"]
 scale = Vector2(2.5, 2.5)
@@ -17,6 +17,6 @@ region_rect = Rect2(64, 40, 16, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 2
-position = Vector2(-1.9073477e-07, -4.7999988)
+position = Vector2(2.3841852e-07, -3.7999985)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_g0s7m")

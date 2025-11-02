@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://djt7j3knrnioy"]
+
+[ext_resource type="Texture2D" uid="uid://50tvce6gdywy" path="res://assets/sprites/Blocks/New Piskel (9).png" id="1_8r6l3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(55.000023, 2.5)
+
+[node name="BookShelf" type="StaticBody2D"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_8r6l3")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(2, 6, 28, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -2
+position = Vector2(1.9744036e-06, 109.99999)
+scale = Vector2(0.99999917, 0.99999917)
+shape = SubResource("RectangleShape2D_akt7f")
+one_way_collision = true

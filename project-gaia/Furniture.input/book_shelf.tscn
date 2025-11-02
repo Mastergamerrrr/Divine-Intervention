@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://brv661i76tx6p"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_c8x1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(55.000023, 2.5)
+
+[node name="BookShelf" type="StaticBody2D"]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_c8x1c")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(18, 56, 22, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.9744036e-06, -28.749989)
+scale = Vector2(0.99999934, 0.99999934)
+shape = SubResource("RectangleShape2D_akt7f")
+one_way_collision = true

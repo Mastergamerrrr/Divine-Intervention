@@ -1,12 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://qw5oxy4ehma"]
+[gd_scene load_steps=10 format=3 uid="uid://dhlcrllrpedhe"]
 
 [ext_resource type="Script" uid="uid://ikamu1w5n8xk" path="res://scripts/door.gd" id="1_42pey"]
 [ext_resource type="Texture2D" uid="uid://50tvce6gdywy" path="res://assets/sprites/Blocks/New Piskel (9).png" id="1_hhoh0"]
 [ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://Interaction/interaction area/interaction_area.tscn" id="2_42pey"]
 [ext_resource type="AudioStream" uid="uid://2g66jiycdip6" path="res://assets/SFX/heater-vent-hit-lower-part-83044.mp3" id="4_oy8i4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8i4"]
-size = Vector2(28, 16)
 
 [sub_resource type="Animation" id="Animation_n7r3n"]
 length = 0.001
@@ -60,7 +57,11 @@ _data = {
 &"open": SubResource("Animation_ive3w")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oy8i4"]
+size = Vector2(28, 16)
+
 [node name="Vent" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_42pey")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -68,15 +69,15 @@ texture = ExtResource("1_hhoh0")
 region_enabled = true
 region_rect = Rect2(1.4039078, 37.360176, 29.188194, 18.204647)
 
-[node name="InteractionArea" parent="." instance=ExtResource("2_42pey")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("RectangleShape2D_oy8i4")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_k2j87")
 }
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_42pey")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_oy8i4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_oy8i4")

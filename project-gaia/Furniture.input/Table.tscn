@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_w4tni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0s7m"]
-size = Vector2(20, 1)
+size = Vector2(20, 2)
 
 [node name="Couch" type="StaticBody2D"]
 
