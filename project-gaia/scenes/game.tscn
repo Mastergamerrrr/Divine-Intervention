@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=22 format=4 uid="uid://dp87uowuihldm"]
+=======
+[gd_scene load_steps=23 format=4 uid="uid://dp87uowuihldm"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=23 format=4 uid="uid://dp87uowuihldm"]
 >>>>>>> Stashed changes
@@ -22,7 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://behygng22pla3" path="res://House_input/doorside.tscn" id="15_rysoc"]
 [ext_resource type="PackedScene" uid="uid://b1ccbfmmgtsas" path="res://interactable OBJECTS/red_block.tscn" id="16_ca42v"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://k7g1u7ke6wig" path="res://interactable OBJECTS/babybottle.tscn" id="17_rysoc"]
+=======
+[ext_resource type="PackedScene" uid="uid://ti5h3noekk0a" path="res://Furniture.input/mini_cabinet.tscn" id="18_ssvqc"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://ti5h3noekk0a" path="res://Furniture.input/mini_cabinet.tscn" id="18_ssvqc"]
 >>>>>>> Stashed changes
@@ -489,6 +497,7 @@ pitch_scale = 2.02
 autoplay = true
 bus = &"Music"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 [node name="RedBlock" parent="." instance=ExtResource("16_ca42v")]
 position = Vector2(768, 12)
@@ -496,5 +505,7 @@ position = Vector2(768, 12)
 [node name="BABYBOTTLE" parent="." instance=ExtResource("17_rysoc")]
 z_index = 14
 position = Vector2(739, -14)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
