@@ -1,53 +1,42 @@
-[gd_scene load_steps=12 format=3 uid="uid://dubpm0drcsld0"]
+[gd_scene load_steps=13 format=3 uid="uid://dubpm0drcsld0"]
 
-[ext_resource type="Script" uid="uid://cxdphf2hyid1p" path="res://Scripts/test_guy.gd" id="1_0mesk"]
-[ext_resource type="Texture2D" uid="uid://c81x4rkbetjhd" path="res://assets/sprites/character/Soldier-Idle.png" id="2_bm1o5"]
+[ext_resource type="Script" uid="uid://cxdphf2hyid1p" path="res://scripts/test_guy.gd" id="1_0mesk"]
+[ext_resource type="Texture2D" uid="uid://r77ivxi8q2rp" path="res://assets/sprites/character/bishop/Bishop_Idle + Walk_1.png" id="2_ssksk"]
+[ext_resource type="Texture2D" uid="uid://8rc0dm1yi32r" path="res://assets/sprites/character/bishop/Bishop_Idle + Walk_2.png" id="3_08ye5"]
 [ext_resource type="PackedScene" uid="uid://bfytqjx1a82qg" path="res://Interaction/interaction area/interaction_area.tscn" id="3_n8blh"]
+[ext_resource type="Texture2D" uid="uid://bo6cysf2t00dn" path="res://assets/sprites/character/bishop/Bishop_Idle + Walk_3.png" id="4_ru585"]
+[ext_resource type="Texture2D" uid="uid://4hhexcxcply1" path="res://assets/sprites/character/bishop/Bishop_Idle + Walk_4.png" id="5_rwsjs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bh1v4"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(0, 0, 100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f07vo"]
+atlas = ExtResource("2_ssksk")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuqo7"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(100, 0, 100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxr27"]
+atlas = ExtResource("3_08ye5")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssksk"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(200, 0, 100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_60ml7"]
+atlas = ExtResource("4_ru585")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_08ye5"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(300, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ru585"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(400, 0, 100, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwsjs"]
-atlas = ExtResource("2_bm1o5")
-region = Rect2(500, 0, 100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtkk7"]
+atlas = ExtResource("5_rwsjs")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f07vo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bh1v4")
+"texture": SubResource("AtlasTexture_f07vo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xuqo7")
+"texture": SubResource("AtlasTexture_hxr27")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ssksk")
+"texture": SubResource("AtlasTexture_60ml7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_08ye5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ru585")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rwsjs")
+"texture": SubResource("AtlasTexture_xtkk7")
 }],
 "loop": true,
 "name": &"default",
@@ -63,9 +52,11 @@ visibility_layer = 524288
 script = ExtResource("1_0mesk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.62, 0.62)
 sprite_frames = SubResource("SpriteFrames_f07vo")
 autoplay = "default"
-frame_progress = 0.757644
+frame_progress = 0.8304781
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_n8blh")]
 action_name = "talk"
