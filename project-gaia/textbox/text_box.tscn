@@ -11,6 +11,7 @@ offset_bottom = 48.0
 script = ExtResource("1_xucxd")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = 50
 layout_mode = 2
 texture = ExtResource("2_sgm0r")
 region_rect = Rect2(0, 0, 32, 32)
@@ -20,7 +21,7 @@ patch_margin_right = 8
 patch_margin_bottom = 24
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-z_index = 7
+z_index = 50
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8

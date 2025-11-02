@@ -3,15 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://doh7bvn0rb767" path="res://assets/sprites/character/bear.png" id="1_ryb5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryb5w"]
-size = Vector2(10, 13)
+size = Vector2(4, 5)
 
-[node name="Musicbox" type="RigidBody2D"]
+[node name="Musicbox" type="RigidBody2D" groups=["music_box"]]
+collision_layer = 64
+collision_mask = 64
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.425, 0.425)
 texture = ExtResource("1_ryb5w")
 region_enabled = true
 region_rect = Rect2(123.2802, 31.279705, 19.084396, 19.932587)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+z_index = 7
 shape = SubResource("RectangleShape2D_ryb5w")

@@ -5,7 +5,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt8aj"]
 size = Vector2(2, 5)
 
-[node name="BABYBOTTLE" type="RigidBody2D"]
+[node name="BABYBOTTLE" type="RigidBody2D" groups=["milk"]]
+z_index = 7
+collision_layer = 64
+collision_mask = 64
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.44, 0.44)

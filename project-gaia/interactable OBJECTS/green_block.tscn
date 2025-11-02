@@ -6,6 +6,7 @@
 size = Vector2(8, 8)
 
 [node name="greenblock" type="RigidBody2D"]
+z_index = 14
 collision_layer = 19
 collision_mask = 19
 mass = 2.0

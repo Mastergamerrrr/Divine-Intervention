@@ -20,3 +20,4 @@ z_index = 2
 position = Vector2(-3.337859e-07, -3.7999995)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_g0s7m")
+one_way_collision = true

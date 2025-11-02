@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7laegojfwu3c"]
+[gd_scene load_steps=11 format=3 uid="uid://b7laegojfwu3c"]
 
 [ext_resource type="Texture2D" uid="uid://b0whf4xvblsst" path="res://assets/sprites/character/Child_spritesheet.png" id="1_7m66d"]
 [ext_resource type="Script" uid="uid://boihhbdfm55sk" path="res://scripts/kidcrying.gd" id="1_8gqcj"]
@@ -37,6 +37,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70ge7"]
 size = Vector2(64, 18)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gqcj"]
+size = Vector2(48, 19)
+
 [node name="KIDCRYING" type="Node2D"]
 script = ExtResource("1_8gqcj")
 
@@ -61,3 +64,14 @@ pitch_scale = 1.46
 autoplay = true
 max_distance = 100.0
 bus = &"soundfx"
+
+[node name="PickupZone" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_8gqcj")
+
+[connection signal="body_entered" from="PickupZone" to="." method="_on_pickup_zone_body_entered"]
+[connection signal="body_exited" from="PickupZone" to="." method="_on_body_exited"]
