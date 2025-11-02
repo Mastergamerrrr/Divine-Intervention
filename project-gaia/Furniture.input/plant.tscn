@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b48n716g2y7np"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_r5jjs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxks7"]
+size = Vector2(22, 1.4285431)
+
+[node name="Plant" type="StaticBody2D"]
+scale = Vector2(1.4, 1.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_r5jjs")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 89.28569)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_kxks7")
+one_way_collision = true
