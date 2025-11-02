@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dde7gqmnmlkod"]
+[gd_scene load_steps=3 format=3 uid="uid://l3qufhna0d68"]
 
 [ext_resource type="Texture2D" uid="uid://doh7bvn0rb767" path="res://assets/sprites/character/bear.png" id="1_ryb5w"]
 
@@ -6,6 +6,7 @@
 size = Vector2(4, 5)
 
 [node name="Musicbox" type="RigidBody2D" groups=["music_box"]]
+z_index = 10
 collision_layer = 64
 collision_mask = 64
 

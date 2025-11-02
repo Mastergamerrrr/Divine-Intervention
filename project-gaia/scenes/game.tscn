@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://dp87uowuihldm"]
+[gd_scene load_steps=52 format=4 uid="uid://dp87uowuihldm"]
 
 [ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://ckgt01qkos88l" path="res://assets/sprites/House/New_Piskel_5.png" id="2_lnu2h"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://c70gsf603wlie" path="res://Furniture.input/mini_cabinet.tscn" id="18_264po"]
 [ext_resource type="PackedScene" uid="uid://bby7ph2ufv3ps" path="res://Furniture.input/small_table.tscn" id="19_1kice"]
 [ext_resource type="PackedScene" uid="uid://bbieae3b75lkk" path="res://House_input/outside_doorleft.tscn" id="21_qouja"]
+[ext_resource type="PackedScene" uid="uid://d5pobbcxfyvl" path="res://Furniture.input/small_light.tscn" id="29_oaba0"]
 [ext_resource type="PackedScene" uid="uid://bqx1r5x48nxvg" path="res://scenes/telephone.tscn" id="30_sgl2t"]
 [ext_resource type="PackedScene" uid="uid://cnd638vlpde3h" path="res://Furniture.input/kitchen_oven_left.tscn" id="32_gxtfn"]
 [ext_resource type="PackedScene" uid="uid://m8yodubdtto8" path="res://Furniture.input/fridge.tscn" id="32_twgab"]
@@ -42,7 +43,10 @@
 [ext_resource type="PackedScene" uid="uid://bgn0sber3m7tp" path="res://Furniture.input/oven.tscn" id="34_02fa5"]
 [ext_resource type="PackedScene" uid="uid://dhlcrllrpedhe" path="res://scenes/vent.tscn" id="35_7025r"]
 [ext_resource type="PackedScene" uid="uid://b742ip2bob6s2" path="res://Furniture.input/oven_in_between.tscn" id="35_nepv3"]
-[ext_resource type="PackedScene" uid="uid://dde7gqmnmlkod" path="res://interactable OBJECTS/musicplayer.tscn" id="43_05nbr"]
+[ext_resource type="PackedScene" uid="uid://l3qufhna0d68" path="res://interactable OBJECTS/musicplayer.tscn" id="43_05nbr"]
+[ext_resource type="PackedScene" uid="uid://b4mt1btmmewdg" path="res://Furniture.input/small_book_shelf.tscn" id="44_0sl42"]
+[ext_resource type="PackedScene" uid="uid://ceuyxy8dd4f3a" path="res://Furniture.input/sink.tscn" id="44_458eo"]
+[ext_resource type="PackedScene" uid="uid://2r12cxpxfelw" path="res://Furniture.input/duck.tscn" id="45_h3rex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -367,7 +371,7 @@ tile_set = SubResource("TileSet_lnu2h")
 
 [node name="Midground" type="TileMapLayer" parent="TileMap"]
 use_parent_material = true
-position = Vector2(-3, 0)
+position = Vector2(-21, -1)
 tile_map_data = PackedByteArray("AABYAOP/BQAAAAMAAAA=")
 tile_set = SubResource("TileSet_lnu2h")
 
@@ -391,12 +395,6 @@ position = Vector2(378, -17)
 [node name="BookShelf" parent="TileMap" instance=ExtResource("6_8ool0")]
 position = Vector2(450, -237)
 
-[node name="Shelf" parent="TileMap" instance=ExtResource("7_vtaks")]
-position = Vector2(404, -249)
-
-[node name="Shelf2" parent="TileMap" instance=ExtResource("7_vtaks")]
-position = Vector2(404, -238)
-
 [node name="Master\'s Bedroom" type="Node" parent="."]
 
 [node name="Bed2" parent="Master\'s Bedroom" instance=ExtResource("6_m4url")]
@@ -409,15 +407,18 @@ position = Vector2(476.99997, -236)
 position = Vector2(458, -283)
 scale = Vector2(0.2, 0.2)
 
-[node name="MBD to Kitchen" parent="Master\'s Bedroom" instance=ExtResource("35_7025r")]
+[node name="MBD to Hallway" parent="Master\'s Bedroom" instance=ExtResource("35_7025r")]
 position = Vector2(458, -283)
 is_teleporter = true
-target_door = NodePath("../../Kitchen/Kitchen to MBD")
+target_door = NodePath("../../Hallway/Living Room to MBDR")
 
 [node name="mini_cabinet2" parent="Master\'s Bedroom" instance=ExtResource("18_264po")]
 position = Vector2(374, -225)
 collision_layer = 32
 collision_mask = 32
+
+[node name="Shelf" parent="Master\'s Bedroom" instance=ExtResource("7_vtaks")]
+position = Vector2(404, -249)
 
 [node name="Bedroom" type="Node" parent="."]
 
@@ -436,7 +437,7 @@ collision_layer = 66
 collision_mask = 65
 
 [node name="Musicbox" parent="Bedroom" instance=ExtResource("43_05nbr")]
-position = Vector2(459, -67)
+position = Vector2(1095, -66)
 collision_layer = 66
 collision_mask = 65
 
@@ -502,10 +503,10 @@ is_teleporter = true
 target_door = NodePath("../../LivingRoom/LR to Hall")
 
 [node name="Teacup" parent="Hallway" instance=ExtResource("7_e1j6l")]
-position = Vector2(711, -21)
+position = Vector2(878, -22)
 
 [node name="Shelf" parent="Hallway" instance=ExtResource("7_vtaks")]
-position = Vector2(757, -61)
+position = Vector2(757, -55)
 
 [node name="Plant" parent="Hallway" instance=ExtResource("6_bt5mj")]
 position = Vector2(755.99994, -19)
@@ -514,10 +515,10 @@ position = Vector2(755.99994, -19)
 position = Vector2(665, -45)
 
 [node name="Candle" parent="Hallway" instance=ExtResource("16_qnb83")]
-position = Vector2(772, -67)
+position = Vector2(772, -61)
 
 [node name="Candle2" parent="Hallway" instance=ExtResource("16_qnb83")]
-position = Vector2(742, -67)
+position = Vector2(742, -61)
 
 [node name="Lights" parent="Hallway" instance=ExtResource("17_sww3w")]
 position = Vector2(798.00006, -79)
@@ -536,6 +537,29 @@ position = Vector2(933, -27.999998)
 
 [node name="OutsideDoorleft" parent="Hallway" instance=ExtResource("21_qouja")]
 position = Vector2(592, -32)
+
+[node name="SmallBookShelf" parent="Hallway" instance=ExtResource("44_0sl42")]
+position = Vector2(814, -29)
+
+[node name="Small Table" parent="Hallway" instance=ExtResource("19_1kice")]
+position = Vector2(868, -12)
+
+[node name="Small Light" parent="Hallway" instance=ExtResource("29_oaba0")]
+position = Vector2(843, -23)
+
+[node name="RedBlock3" parent="Hallway" instance=ExtResource("16_ca42v")]
+position = Vector2(765, -9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Vent Shadow" parent="Hallway" instance=ExtResource("10_pr1ej")]
+position = Vector2(757, -65)
+scale = Vector2(0.2, 0.2)
+
+[node name="Living Room to MBDR" parent="Hallway" instance=ExtResource("35_7025r")]
+position = Vector2(757, -65)
+is_teleporter = true
+target_door = NodePath("../../Master\'s Bedroom/MBD to Hallway")
 
 [node name="LivingRoom" type="Node" parent="."]
 
@@ -570,13 +594,19 @@ position = Vector2(1106.0001, -78.99999)
 position = Vector2(1156, -79)
 
 [node name="Painting" parent="LivingRoom" instance=ExtResource("5_5newe")]
-position = Vector2(1131, -44.999992)
+position = Vector2(1095.0001, -50)
 
 [node name="Plant" parent="LivingRoom" instance=ExtResource("6_bt5mj")]
 position = Vector2(1089, -18.999992)
 
 [node name="Small Table" parent="LivingRoom" instance=ExtResource("19_1kice")]
 position = Vector2(1129, -8.999992)
+
+[node name="Small Light2" parent="LivingRoom" instance=ExtResource("29_oaba0")]
+position = Vector2(1171, -22)
+
+[node name="Shelf" parent="LivingRoom" instance=ExtResource("7_vtaks")]
+position = Vector2(1129, -46)
 
 [node name="Kitchen" type="Node" parent="."]
 
@@ -679,15 +709,6 @@ position = Vector2(843, -238)
 collision_layer = 3
 collision_mask = 3
 
-[node name="BookShelf" parent="Kitchen" instance=ExtResource("10_pr1ej")]
-position = Vector2(601, -219)
-scale = Vector2(0.2, 0.2)
-
-[node name="Kitchen to MBD" parent="Kitchen" instance=ExtResource("35_7025r")]
-position = Vector2(601, -219)
-is_teleporter = true
-target_door = NodePath("../../Master\'s Bedroom/MBD to Kitchen")
-
 [node name="CR" type="Node" parent="."]
 
 [node name="Side Door8" parent="CR" instance=ExtResource("17_ssvqc")]
@@ -706,8 +727,17 @@ position = Vector2(604, -421)
 is_teleporter = true
 target_door = NodePath("../../Kitchen/Kitchen to CR")
 
-[node name="Small Table" parent="CR" instance=ExtResource("19_1kice")]
-position = Vector2(703, -12)
+[node name="Sink" parent="CR" instance=ExtResource("44_458eo")]
+position = Vector2(678.00006, -411)
+
+[node name="Duck" parent="CR" instance=ExtResource("45_h3rex")]
+position = Vector2(737.00006, -414.00003)
+
+[node name="Duck2" parent="CR" instance=ExtResource("45_h3rex")]
+position = Vector2(728, -414)
+
+[node name="Duck3" parent="CR" instance=ExtResource("45_h3rex")]
+position = Vector2(711, -414)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_ir15t")

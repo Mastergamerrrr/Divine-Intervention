@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_xofd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
-size = Vector2(22, 1.4285431)
+size = Vector2(14.785719, 1.4285709)
 
 [node name="Painting" type="StaticBody2D"]
 scale = Vector2(1.4, 1.4)
@@ -16,7 +16,7 @@ region_enabled = true
 region_rect = Rect2(50, 17, 12, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 89.28569)
-scale = Vector2(0.9999998, 0.9999998)
+position = Vector2(0, -8.571428)
+scale = Vector2(0.99999917, 0.99999917)
 shape = SubResource("RectangleShape2D_akt7f")
 one_way_collision = true
