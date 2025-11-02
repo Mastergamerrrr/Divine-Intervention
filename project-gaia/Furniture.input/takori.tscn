@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://6hd6asx5h3j6"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_25p3y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
+size = Vector2(18, 8.888889)
+
+[node name="Takori" type="StaticBody2D"]
+scale = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_25p3y")
+region_enabled = true
+region_rect = Rect2(55, 43, 9, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 133.33334)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_akt7f")

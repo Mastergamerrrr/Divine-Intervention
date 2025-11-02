@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbr2vfdbnlw24" path="res://assets/sprites/Furniture/Chair.png" id="1_ly6gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0s7m"]
-size = Vector2(7, 1)
+size = Vector2(12.800002, 3.2000017)
 
 [node name="Chair" type="StaticBody2D"]
 

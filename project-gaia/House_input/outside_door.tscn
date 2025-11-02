@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_d42nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ose7o"]
-size = Vector2(3.0769234, 26.153849)
+size = Vector2(1.7647055, 25.361992)
 
 [node name="OutsideDoor" type="StaticBody2D"]
 position = Vector2(0, 1)
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.7, 1.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
@@ -16,5 +16,6 @@ region_enabled = true
 region_rect = Rect2(50, 51, 4, 21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.76923084, 0)
+position = Vector2(0.2941177, -0.06787491)
+scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_ose7o")

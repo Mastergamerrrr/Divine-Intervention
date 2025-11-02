@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkkufiupil220"]
+
+[ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_ackv3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0s7m"]
+size = Vector2(13.75, 0)
+
+[node name="Kitchen Oven Right" type="StaticBody2D"]
+scale = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_ackv3")
+region_enabled = true
+region_rect = Rect2(56, 32, 12, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_g0s7m")
