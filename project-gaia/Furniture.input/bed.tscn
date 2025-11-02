@@ -3,12 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dd8xi1uvdm01j" path="res://assets/sprites/Furniture/AssetSheet_Furniture.png" id="1_akt7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akt7f"]
-size = Vector2(34, 1)
+size = Vector2(34, 2.5)
 
 [node name="Bed" type="StaticBody2D"]
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_akt7f")
 flip_h = true
 region_enabled = true

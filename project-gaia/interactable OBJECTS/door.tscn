@@ -10,7 +10,7 @@
 size = Vector2(11, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2b6"]
-size = Vector2(22, 21)
+size = Vector2(8, 6)
 
 [sub_resource type="Animation" id="Animation_la1wf"]
 length = 0.001
@@ -108,7 +108,7 @@ script = ExtResource("1_la1wf")
 metadata/_edit_vertical_guides_ = [-5.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.05, 1)
+scale = Vector2(2.1, 2)
 texture = ExtResource("1_83dcw")
 offset = Vector2(0.5, 0)
 
@@ -120,7 +120,7 @@ shape = SubResource("RectangleShape2D_kgbum")
 action_name = "toggle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(1, 1.5)
+position = Vector2(5, 7)
 shape = SubResource("RectangleShape2D_pg2b6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
