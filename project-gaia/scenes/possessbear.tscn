@@ -1,66 +1,66 @@
 [gd_scene load_steps=38 format=3 uid="uid://dal2ayp8gtydd"]
 
-[ext_resource type="Script" uid="uid://dah7c4he6i26q" path="res://scripts/canvas_layer.gd" id="1_c4rma"]
-[ext_resource type="AudioStream" uid="uid://cyaluveolgwh5" path="res://assets/SFX/teleport-sound-95186.mp3" id="2_ghj5q"]
-[ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="2_kfwc7"]
-[ext_resource type="Texture2D" uid="uid://bqesfxsdmt2rm" path="res://assets/sprites/character/Water Effect and Bullet 16x16.png" id="3_ek3oe"]
-[ext_resource type="Texture2D" uid="uid://dqojnim4lvjn2" path="res://assets/sprites/character/bear (3).png" id="4_4a2ha"]
-[ext_resource type="AudioStream" uid="uid://cye0us7gaaqmb" path="res://assets/music/Untitled song (1).mp3" id="6_4a2ha"]
+[ext_resource type="Script" uid="uid://dah7c4he6i26q" path="res://scripts/canvas_layer.gd" id="1_8osjh"]
+[ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="2_n0n45"]
+[ext_resource type="AudioStream" uid="uid://cyaluveolgwh5" path="res://assets/SFX/teleport-sound-95186.mp3" id="3_annyw"]
+[ext_resource type="Texture2D" uid="uid://dqojnim4lvjn2" path="res://assets/sprites/character/bear (3).png" id="4_tkn1t"]
+[ext_resource type="Texture2D" uid="uid://bqesfxsdmt2rm" path="res://assets/sprites/character/Water Effect and Bullet 16x16.png" id="5_5sb4k"]
+[ext_resource type="AudioStream" uid="uid://cye0us7gaaqmb" path="res://assets/music/Untitled song (1).mp3" id="6_a5x3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i58dl"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(168, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5w214"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(96, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1m5mi"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(120, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfvq4"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(144, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4bgk"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(168, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nuyhn"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llckv"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iubfk"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(24, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r0ni"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(48, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxvcf"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(72, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2a36"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(96, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ckgqs"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(120, 96, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0tjvd"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(144, 96, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtgob"]
-atlas = ExtResource("2_kfwc7")
+atlas = ExtResource("2_n0n45")
 region = Rect2(168, 96, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iubfk"]
@@ -114,51 +114,51 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mg525"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(224, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfwc7"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(240, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4a2ha"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(256, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6s7q"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(272, 80, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtalx"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(272, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wskm7"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(256, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6gso4"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(240, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gp8r"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(224, 96, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8hp1u"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(224, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgm0l"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(240, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7gpq"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(256, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8gye"]
-atlas = ExtResource("3_ek3oe")
+atlas = ExtResource("5_5sb4k")
 region = Rect2(272, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i58dl"]
@@ -243,6 +243,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AnimatableBody2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AnimatableBody2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(9.43, 9.43)]
+}
 
 [sub_resource type="Animation" id="Animation_ex8h3"]
 resource_name = "fadeout"
@@ -297,6 +321,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [0.0, 0.2303834612632513]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AnimatableBody2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.5333333, 5.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AnimatableBody2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.7, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(9.43, 9.43), Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghj5q"]
 _data = {
@@ -305,7 +353,7 @@ _data = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_c4rma")
+script = ExtResource("1_8osjh")
 metadata/_edit_horizontal_guides_ = [331.0]
 metadata/_edit_vertical_guides_ = [583.0]
 
@@ -325,13 +373,13 @@ frame = 13
 frame_progress = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ghj5q")
+stream = ExtResource("3_annyw")
 pitch_scale = 1.55
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(583, 330)
 scale = Vector2(3.595, 3.595)
-texture = ExtResource("4_4a2ha")
+texture = ExtResource("4_tkn1t")
 region_enabled = true
 region_rect = Rect2(0, 33.210564, 22.631653, 16.93422)
 
@@ -352,7 +400,7 @@ libraries = {
 autoplay = "fadeout"
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_4a2ha")
+stream = ExtResource("6_a5x3r")
 volume_db = -21.722
 pitch_scale = 2.4
 autoplay = true

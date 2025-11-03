@@ -1,62 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcrnnabnd2886"]
+[gd_scene load_steps=16 format=3 uid="uid://dcrnnabnd2886"]
 
 [ext_resource type="Script" uid="uid://bb18icxojl1eq" path="res://scripts/aftercall.gd" id="1_3jmf4"]
 [ext_resource type="Texture2D" uid="uid://3x7e80lhebnh" path="res://assets/sprites/Blocks/masterbed.jpg" id="1_170q5"]
 [ext_resource type="FontFile" uid="uid://0b4qcgqtmnis" path="res://assets/fonts/superstar_memesbruh03.ttf" id="1_u3xx6"]
 [ext_resource type="AudioStream" uid="uid://ciyev6tqj14lh" path="res://assets/SFX/computer-mouse-click-352734.mp3" id="2_08xti"]
 [ext_resource type="AudioStream" uid="uid://cim15xqvlkb5v" path="res://assets/SFX/police-sirensfar-60810.mp3" id="2_14ca6"]
-
-[sub_resource type="Animation" id="Animation_170q5"]
-resource_name = "cutscene"
-length = 14.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.1666667, 2.3033333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.03333336, 2.2333333),
-"transitions": PackedFloat32Array(1, 0.1830108),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2.1, 5.0666666, 7.7000003, 10.533333, 30),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(5.3, 7.9, 10.666667, 12.833333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": ["The kid was saved at last — a heartbreaking truth emerged: the mother had left after a bitter divorce, and no one else had wanted the child.", "You did well lost soul...", "Now the heavens are waiting for your arrival...", ""]
-}
+[ext_resource type="AudioStream" uid="uid://22c4md0jk05e" path="res://assets/music/Untitled song (2).mp3" id="4_ewpfm"]
+[ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="6_3jmf4"]
+[ext_resource type="Texture2D" uid="uid://dqojnim4lvjn2" path="res://assets/sprites/character/bear (3).png" id="7_ewpfm"]
 
 [sub_resource type="Animation" id="Animation_08xti"]
 length = 0.001
@@ -108,6 +59,202 @@ tracks/3/keys = {
 "update": 1,
 "values": [""]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect2:z_index")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-3]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D3:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_170q5"]
+resource_name = "cutscene"
+length = 32.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.0666666, 5.203333, 25.633333, 29.433332, 29.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.9666667),
+"transitions": PackedFloat32Array(1, 0.1830108),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.1666665, 8.133333, 13.2, 16.033333, 29.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8.366667, 13.400001, 16.166668, 18.333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["The kid was saved at last — a heartbreaking truth emerged: the mother had left after a bitter divorce, and no one else had wanted the child.", "You did well lost soul...", "Now the heavens are waiting for your arrival...", ""]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(19.9, 24.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(18.733334, 20, 26.766666, 27.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(19.9, 26.566668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -91.53)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect2:z_index")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(23.2, 23.733334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-3, -2]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D3:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(20.166666, 29.466667),
+"transitions": PackedFloat32Array(1, 24.251463),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(21.166666, 22.066668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14ca6"]
 _data = {
@@ -115,8 +262,39 @@ _data = {
 &"cutscene": SubResource("Animation_170q5")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhona"]
+atlas = ExtResource("6_3jmf4")
+region = Rect2(96, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nikc2"]
+atlas = ExtResource("6_3jmf4")
+region = Rect2(72, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6puew"]
+atlas = ExtResource("6_3jmf4")
+region = Rect2(48, 72, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c00yq"]
+animations = [{
+"frames": [{
+"duration": 4.21,
+"texture": SubResource("AtlasTexture_uhona")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_nikc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6puew")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Aftercall" type="CanvasLayer"]
 script = ExtResource("1_3jmf4")
+metadata/_edit_horizontal_guides_ = [330.0]
+metadata/_edit_vertical_guides_ = [565.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
@@ -162,3 +340,31 @@ volume_db = 20.53
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_14ca6")
+pitch_scale = 1.12
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(566, 301)
+scale = Vector2(3.85, 3.85)
+sprite_frames = SubResource("SpriteFrames_c00yq")
+autoplay = "default"
+frame = 2
+frame_progress = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(565.00006, 333.00003)
+scale = Vector2(2.74, 2.74)
+texture = ExtResource("7_ewpfm")
+region_enabled = true
+region_rect = Rect2(4.285183, 34.000587, 14.406475, 15.157356)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -3
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 1187.0
+offset_bottom = 673.0
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ewpfm")
+volume_db = -22.187
+pitch_scale = 1.25
