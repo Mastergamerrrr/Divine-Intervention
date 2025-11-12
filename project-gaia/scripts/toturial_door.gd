@@ -10,7 +10,7 @@ var audio_pitch_scale: float = 2.0  # Speed up the audio
 
 # Scene transition properties
 @export var is_scene_transition: bool = true
-@export var target_scene: String = "res://scenes/canvas_layer.tscn"
+@export var target_scene: String = "res://scenes/possessbear.tscn"
 
 func _ready() -> void:
 	if is_scene_transition:
