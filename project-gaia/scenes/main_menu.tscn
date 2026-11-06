@@ -152,7 +152,7 @@ position = Vector2(-468.12, 27.59999)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_lgwnu")
 autoplay = "default"
-frame_progress = 0.11887255
+frame_progress = 0.8958489
 
 [node name="MenuAnchor" type="Control" parent="." unique_id=1478268108]
 layout_mode = 1

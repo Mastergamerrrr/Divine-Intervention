@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://l3qufhna0d68"]
 
-[ext_resource type="Texture2D" uid="uid://doh7bvn0rb767" path="res://assets/sprites/character/bear.png" id="1_ryb5w"]
+[ext_resource type="Texture2D" path="res://assets/sprites/House/music_box.png" id="1_ryb5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryb5w"]
 size = Vector2(4, 5)
@@ -11,10 +11,11 @@ collision_layer = 64
 collision_mask = 64
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.425, 0.425)
+position = Vector2(0.65, -1.15)
+scale = Vector2(0.0095, 0.0095)
 texture = ExtResource("1_ryb5w")
 region_enabled = true
-region_rect = Rect2(123.2802, 31.279705, 19.084396, 19.932587)
+region_rect = Rect2(198, 225, 1063, 765)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 7

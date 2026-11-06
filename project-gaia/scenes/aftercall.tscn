@@ -1,370 +1,294 @@
 [gd_scene format=3 uid="uid://dcrnnabnd2886"]
 
-[ext_resource type="Script" uid="uid://bb18icxojl1eq" path="res://scripts/aftercall.gd" id="1_3jmf4"]
-[ext_resource type="Texture2D" uid="uid://3x7e80lhebnh" path="res://assets/sprites/Blocks/masterbed.jpg" id="1_170q5"]
-[ext_resource type="FontFile" uid="uid://0b4qcgqtmnis" path="res://assets/fonts/superstar_memesbruh03.ttf" id="1_u3xx6"]
-[ext_resource type="AudioStream" uid="uid://ciyev6tqj14lh" path="res://assets/SFX/computer-mouse-click-352734.mp3" id="2_08xti"]
-[ext_resource type="AudioStream" uid="uid://cim15xqvlkb5v" path="res://assets/SFX/police-sirensfar-60810.mp3" id="2_14ca6"]
-[ext_resource type="AudioStream" uid="uid://22c4md0jk05e" path="res://assets/music/Untitled song (2).mp3" id="4_ewpfm"]
-[ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="6_3jmf4"]
-[ext_resource type="Texture2D" uid="uid://dqojnim4lvjn2" path="res://assets/sprites/character/bear (3).png" id="7_ewpfm"]
+[ext_resource type="Script" path="res://scripts/aftercall.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/House/aftercall_bedroom.png" id="2_room"]
+[ext_resource type="Texture2D" path="res://assets/sprites/character/bear.png" id="3_phone"]
+[ext_resource type="Texture2D" path="res://assets/sprites/character/bear (3).png" id="4_bear"]
+[ext_resource type="Texture2D" path="res://assets/sprites/character/ghost_spritesheet.png" id="5_ghost"]
+[ext_resource type="FontFile" path="res://assets/fonts/PixelOperator8.ttf" id="6_font"]
+[ext_resource type="FontFile" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_bold"]
+[ext_resource type="AudioStream" path="res://assets/SFX/police-sirensfar-60810.mp3" id="8_siren"]
+[ext_resource type="AudioStream" path="res://assets/music/Untitled song (2).mp3" id="9_music"]
 
-[sub_resource type="Animation" id="Animation_08xti"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimatedSprite2D:offset")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ColorRect2:z_index")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [-3]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer2D3:playing")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("ColorRect2:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
+[ext_resource type="Texture2D" path="res://assets/sprites/House/aftercall_sky.png" id="10_sky"]
+[ext_resource type="Shader" path="res://scenes/aftercall_spotlight.gdshader" id="11_light"]
+[ext_resource type="AudioStream" path="res://assets/SFX/teleport-sound-95186.mp3" id="12_ascent"]
 
-[sub_resource type="Animation" id="Animation_170q5"]
-resource_name = "cutscene"
-length = 32.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.0666666, 5.203333, 25.633333, 29.433332, 29.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 4.9666667),
-"transitions": PackedFloat32Array(1, 0.1830108),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D2:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(5.1666665, 8.133333, 13.2, 16.033333, 29.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Control/Label:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(8.366667, 13.400001, 16.166668, 18.333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": ["The kid was saved at last — a heartbreaking truth emerged: the mother had left after a bitter divorce, and no one else had wanted the child.", "You did well lost soul...", "Now the heavens are waiting for your arrival...", ""]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AnimatedSprite2D:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(19.9, 24.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Sprite2D:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(18.733334, 20, 26.766666, 27.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimatedSprite2D:offset")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(19.9, 26.566668),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -91.53)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ColorRect2:z_index")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(23.2, 23.733334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [-3, -2]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer2D3:playing")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(20.166666, 29.466667),
-"transitions": PackedFloat32Array(1, 24.251463),
-"update": 1,
-"values": [true, false]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("ColorRect2:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(21.166666, 22.066668),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
+[ext_resource type="Texture2D" path="res://assets/sprites/House/aftercall_rescue.png" id="13_rescue"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_14ca6"]
-_data = {
-&"RESET": SubResource("Animation_08xti"),
-&"cutscene": SubResource("Animation_170q5")
-}
+[ext_resource type="Texture2D" path="res://assets/sprites/House/call_bedroom_closed.png" id="14_call_room"]
+[ext_resource type="AudioStream" path="res://assets/SFX/telephone-dial-and-call-ring-21151.mp3" id="16_dial"]
+[ext_resource type="AudioStream" path="res://assets/SFX/911-whats-your-emergency-104104.mp3" id="17_operator"]
+[ext_resource type="AudioStream" path="res://assets/SFX/hatapon-crying-344088.mp3" id="18_child"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhona"]
-atlas = ExtResource("6_3jmf4")
-region = Rect2(96, 72, 24, 24)
+[sub_resource type="ShaderMaterial" id="Shader_spotlight"]
+shader = ExtResource("11_light")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nikc2"]
-atlas = ExtResource("6_3jmf4")
-region = Rect2(72, 72, 24, 24)
+[sub_resource type="Gradient" id="Gradient_light"]
+offsets = PackedFloat32Array(0, 0.43, 1)
+colors = PackedColorArray(1, 1, 1, 0.8, 1, 1, 1, 0.28, 1, 1, 1, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6puew"]
-atlas = ExtResource("6_3jmf4")
+[sub_resource type="GradientTexture2D" id="GradientTexture_light"]
+gradient = SubResource("Gradient_light")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="Material_glow"]
+blend_mode = 1
+
+[sub_resource type="AtlasTexture" id="Atlas_phone"]
+atlas = ExtResource("3_phone")
+region = Rect2(95, 31, 27, 18)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_call_base"]
+atlas = ExtResource("3_phone")
+region = Rect2(98, 40, 19, 8)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_call_receiver"]
+atlas = ExtResource("3_phone")
+region = Rect2(98, 33, 19, 7)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_bear"]
+atlas = ExtResource("4_bear")
+region = Rect2(0, 24, 24, 24)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Atlas_ghost_a"]
+atlas = ExtResource("5_ghost")
 region = Rect2(48, 72, 24, 24)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_c00yq"]
+[sub_resource type="AtlasTexture" id="Atlas_ghost_b"]
+atlas = ExtResource("5_ghost")
+region = Rect2(72, 72, 24, 24)
+
+[sub_resource type="AtlasTexture" id="Atlas_ghost_c"]
+atlas = ExtResource("5_ghost")
+region = Rect2(96, 72, 24, 24)
+
+[sub_resource type="SpriteFrames" id="Frames_ghost"]
 animations = [{
 "frames": [{
-"duration": 4.21,
-"texture": SubResource("AtlasTexture_uhona")
-}, {
-"duration": 0.41,
-"texture": SubResource("AtlasTexture_nikc2")
+"duration": 1.0,
+"texture": SubResource("Atlas_ghost_a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6puew")
+"texture": SubResource("Atlas_ghost_b")
+}, {
+"duration": 1.0,
+"texture": SubResource("Atlas_ghost_c")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
-[node name="Aftercall" type="CanvasLayer"]
-script = ExtResource("1_3jmf4")
-metadata/_edit_horizontal_guides_ = [330.0]
-metadata/_edit_vertical_guides_ = [565.0]
+[sub_resource type="StyleBoxFlat" id="Style_caption"]
+bg_color = Color(0.075, 0.048, 0.09, 0.96)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.62, 0.39, 0.28, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-offset_left = -53.0
-offset_top = -33.0
-offset_right = 1206.0
-offset_bottom = 705.0
+[node name="Aftercall" type="CanvasLayer"]
+script = ExtResource("1_script")
+
+[node name="Matte" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.046, 0.027, 0.058, 1)
+
+[node name="Frame" type="Control" parent="."]
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+clip_contents = true
+texture_filter = 1
+
+[node name="World" type="Node2D" parent="Frame"]
+
+[node name="Bedroom" type="TextureRect" parent="Frame/World"]
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+texture = ExtResource("2_room")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Sky" type="TextureRect" parent="Frame/World"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+texture = ExtResource("10_sky")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Phone" type="Sprite2D" parent="Frame/World"]
+position = Vector2(245, 188)
+scale = Vector2(1.45, 1.45)
+texture = SubResource("Atlas_phone")
+
+[node name="Bear" type="Sprite2D" parent="Frame/World"]
+position = Vector2(283, 198)
+scale = Vector2(2.5, 2.5)
+texture = SubResource("Atlas_bear")
+offset = Vector2(0, -11)
+
+[node name="Rescue" type="Node2D" parent="Frame/World"]
+
+[node name="Exterior" type="TextureRect" parent="Frame/World/Rescue"]
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+texture = ExtResource("13_rescue")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Light" type="Sprite2D" parent="Frame/World/Rescue"]
+material = SubResource("Material_glow")
+modulate = Color(0.4, 0.55, 1, 0)
+position = Vector2(111, 164)
+scale = Vector2(1.45, 1.25)
+texture_filter = 2
+texture = SubResource("GradientTexture_light")
+
+[node name="Spotlight" type="ColorRect" parent="Frame/World"]
+material = SubResource("Shader_spotlight")
+modulate = Color(1, 1, 1, 0)
+offset_left = 163.0
+offset_right = 403.0
+offset_bottom = 265.0
+mouse_filter = 2
+
+[node name="SourceLight" type="Sprite2D" parent="Frame/World"]
+material = SubResource("Material_glow")
+modulate = Color(1, 0.78, 0.44, 0)
+position = Vector2(283, 4)
+scale = Vector2(2.05, 1.34)
+texture_filter = 2
+texture = SubResource("GradientTexture_light")
+
+[node name="Ghost" type="AnimatedSprite2D" parent="Frame/World"]
+modulate = Color(1, 0.97, 0.87, 0)
+position = Vector2(283, 170)
+scale = Vector2(2.65, 2.65)
+sprite_frames = SubResource("Frames_ghost")
+autoplay = "default"
+
+[node name="SkyGhost" type="AnimatedSprite2D" parent="Frame/World"]
+modulate = Color(1, 0.97, 0.87, 0)
+position = Vector2(283, 207)
+scale = Vector2(2.1, 2.1)
+sprite_frames = SubResource("Frames_ghost")
+autoplay = "default"
+
+[node name="Call" type="Node2D" parent="Frame"]
+
+[node name="Room" type="TextureRect" parent="Frame/Call"]
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+texture = ExtResource("14_call_room")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Cord" type="Line2D" parent="Frame/Call"]
+visible = false
+points = PackedVector2Array(350, 173, 346, 191, 338, 199, 322, 198)
+width = 3.0
+default_color = Color(0.11, 0.044, 0.095, 1)
+
+[node name="CallPhone" type="Sprite2D" parent="Frame/Call"]
+position = Vector2(315, 191)
+scale = Vector2(3.5, 3.5)
+texture = SubResource("Atlas_call_base")
+
+[node name="CallBear" type="Sprite2D" parent="Frame/Call"]
+position = Vector2(384, 204.5)
+scale = Vector2(5, 5)
+texture = SubResource("Atlas_bear")
+offset = Vector2(0, -12)
+
+[node name="Receiver" type="Sprite2D" parent="Frame/Call"]
+position = Vector2(315, 165)
+scale = Vector2(3.5, 3.5)
+texture = SubResource("Atlas_call_receiver")
+
+[node name="Caption" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+grow_vertical = 0
+mouse_filter = 2
+texture_filter = 1
+theme_override_styles/panel = SubResource("Style_caption")
+
+[node name="Padding" type="MarginContainer" parent="Caption"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="Copy" type="VBoxContainer" parent="Caption/Padding"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 7
+
+[node name="Speaker" type="Label" parent="Caption/Padding/Copy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.67, 0.41, 1)
+theme_override_fonts/font = ExtResource("7_bold")
+theme_override_font_sizes/font_size = 16
+
+[node name="Line" type="Label" parent="Caption/Padding/Copy"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.80, 1)
+theme_override_fonts/font = ExtResource("6_font")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 3
+
+[node name="Fade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Siren" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_siren")
+volume_db = -15.0
+bus = &"soundfx"
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 175.0
-offset_top = 137.0
-offset_right = 1015.0
-offset_bottom = 546.0
-theme_override_fonts/font = ExtResource("1_u3xx6")
-theme_override_font_sizes/font_size = 36
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_music")
+volume_db = -13.0
+bus = &"Music"
 
-[node name="Masterbed" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(576.5, 321.75)
-scale = Vector2(1.0880681, 1.1326889)
-texture = ExtResource("1_170q5")
+[node name="AscentSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ascent")
+volume_db = -21.0
+pitch_scale = 0.78
+bus = &"soundfx"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_14ca6")
-}
-autoplay = "cutscene"
+[node name="Dialing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_dial")
+pitch_scale = 1.7
+bus = &"soundfx"
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_08xti")
-volume_db = 20.53
+[node name="Operator" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_operator")
+pitch_scale = 1.46
+bus = &"soundfx"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_14ca6")
-pitch_scale = 1.12
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(566, 301)
-scale = Vector2(3.85, 3.85)
-sprite_frames = SubResource("SpriteFrames_c00yq")
-autoplay = "default"
-frame = 2
-frame_progress = 1.0
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(565.00006, 333.00003)
-scale = Vector2(2.74, 2.74)
-texture = ExtResource("7_ewpfm")
-region_enabled = true
-region_rect = Rect2(4.285183, 34.000587, 14.406475, 15.157356)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-z_index = -3
-offset_left = -13.0
-offset_top = -14.0
-offset_right = 1187.0
-offset_bottom = 673.0
-
-[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ewpfm")
-volume_db = -22.187
-pitch_scale = 1.25
+[node name="ChildAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_child")
+volume_db = -21.204
+pitch_scale = 1.46
+bus = &"soundfx"
