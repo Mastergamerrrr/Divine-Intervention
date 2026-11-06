@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" uid="uid://yap8skbrf72k" path="res://assets/sprites/House/AssetsSheet_House.png" id="1_house"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/House/purgatory_hall.png" id="2_hall"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_door_frame"]
+atlas = ExtResource("1_house")
+region = Rect2(56, 72, 16, 24)
+filter_clip = true
+
+[node name="PurgatoryRoom" type="Node2D"]
+z_index = -2
+texture_filter = 1
+
+[node name="Wall" type="Polygon2D" parent="."]
+color = Color(0.94, 0.91, 0.96, 1)
+texture = ExtResource("2_hall")
+polygon = PackedVector2Array(-164, -93, -156, -101, 156, -101, 164, -93, 164, -8, -164, -8)
+uv = PackedVector2Array(0, 61, 54, 0, 2179, 0, 2233, 61, 2233, 704, 0, 704)
+
+[node name="Foundation" type="Polygon2D" parent="."]
+color = Color(0.21176, 0.13725, 0.21961, 1)
+polygon = PackedVector2Array(-166, -5, 166, -5, 166, 4, 159, 11, -159, 11, -166, 4)
+
+[node name="FoundationTrim" type="Polygon2D" parent="."]
+color = Color(0.38431, 0.25098, 0.24706, 1)
+polygon = PackedVector2Array(-163, 1, 163, 1, 163, 3, -163, 3)
+
+[node name="FoundationInset" type="Polygon2D" parent="."]
+color = Color(0.14902, 0.10196, 0.18039, 1)
+polygon = PackedVector2Array(-159, 5, 159, 5, 159, 9, -159, 9)
+
+[node name="DoorBay" type="Polygon2D" parent="."]
+color = Color(0.16078, 0.12549, 0.19608, 1)
+polygon = PackedVector2Array(101, -35, 104, -38, 125, -38, 128, -35, 128, -8, 101, -8)
+
+[node name="DoorBayLintel" type="Polygon2D" parent="."]
+color = Color(0.56, 0.32, 0.25, 1)
+polygon = PackedVector2Array(103, -36, 126, -36, 126, -34, 103, -34)
+
+[node name="DoorBayLeftPost" type="Polygon2D" parent="."]
+color = Color(0.40, 0.21, 0.19, 1)
+polygon = PackedVector2Array(102, -34, 105, -34, 105, -8, 102, -8)
+
+[node name="DoorBayRightPost" type="Polygon2D" parent="."]
+color = Color(0.40, 0.21, 0.19, 1)
+polygon = PackedVector2Array(124, -34, 127, -34, 127, -8, 124, -8)
+
+[node name="DoorRecess" type="Polygon2D" parent="."]
+color = Color(0.12941, 0.09412, 0.15294, 1)
+polygon = PackedVector2Array(105, -34, 124, -34, 124, -8, 105, -8)
+
+[node name="DoorJamb" type="Sprite2D" parent="."]
+position = Vector2(114.5, -20)
+texture = SubResource("AtlasTexture_door_frame")
+
+[node name="DoorThreshold" type="Polygon2D" parent="."]
+color = Color(0.57255, 0.38824, 0.34118, 1)
+polygon = PackedVector2Array(101, -10, 128, -10, 128, -8, 101, -8)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bayye4m5clbx4"]
 
-[ext_resource type="Script" path="res://Scripts/text_box.gd" id="1_xucxd"]
+[ext_resource type="Script" path="res://scripts/text_box.gd" id="1_xucxd"]
 [ext_resource type="Texture2D" uid="uid://dbubajkj7brls" path="res://textbox/New Piskel (2).png" id="2_sgm0r"]
 [ext_resource type="FontFile" uid="uid://p8ipl2uqh37w" path="res://assets/fonts/PixelOperator8.ttf" id="3_xucxd"]
 

@@ -6,6 +6,7 @@ var dialog_lines: Array[String] = []
 var current_line_index = 0
 
 var text_box
+var dialog_box_scene: PackedScene
 var text_box_position: Vector2
 
 var is_dialog_active = false
@@ -23,7 +24,7 @@ func _ready():
 	add_child(audio_player)
 	print("AudioStreamPlayer created for DialogManager")
 
-func start_dialog(position: Vector2, lines: Array[String], speech_sfx: AudioStream, tail_position = 0.5):
+func start_dialog(position: Vector2, lines: Array[String], speech_sfx: AudioStream, tail_position = 0.5, box_scene: PackedScene = null):
 	if is_dialog_active:
 		# Clean up existing dialog
 		if text_box and is_instance_valid(text_box):
@@ -34,6 +35,7 @@ func start_dialog(position: Vector2, lines: Array[String], speech_sfx: AudioStre
 	text_box_position = position
 	current_line_index = 0
 	sfx = speech_sfx
+	dialog_box_scene = box_scene if box_scene else text_box_scene
 	_show_text_box()
 	
 	is_dialog_active = true
@@ -51,7 +53,7 @@ func _show_text_box():
 		end_dialog()
 		return
 		
-	text_box = text_box_scene.instantiate()
+	text_box = dialog_box_scene.instantiate()
 	text_box.finished_displaying.connect(on_text_box_finished_displaying)
 	
 	# Check if text_box has the letter_displayed signal before connecting

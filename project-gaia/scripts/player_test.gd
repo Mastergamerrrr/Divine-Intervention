@@ -105,7 +105,7 @@ func handle_grab_input() -> void:
 
 func try_grab_object() -> void:
 	# Check for nearby RigidBody2D objects in front of player using area detection
-	var grab_area = $GrabArea  # We'll add this Area2D node
+	var grab_area := get_node_or_null("GrabArea") as Area2D
 	
 	# If we don't have a grab area, use overlap query
 	if not grab_area:
@@ -122,9 +122,9 @@ func try_grab_object() -> void:
 		var facing_dir = Vector2.RIGHT if not animated_sprite.flip_h else Vector2.LEFT
 		query.transform = Transform2D(0, global_position + facing_dir * 5)
 		query.collision_mask = 1  # Adjust to match your block's collision layer
-		query.exclude = [self]
+		query.exclude = [get_rid()]
 		
-		var results = space_state.intersect_shape(query, 1)
+		var results = space_state.intersect_shape(query)
 		
 		for result in results:
 			if result.collider is RigidBody2D:

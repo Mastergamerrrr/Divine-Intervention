@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://textbox/text_box.tscn" id="1_text_box"]
+
+[node name="TutorialTextBox" instance=ExtResource("1_text_box")]
+scale = Vector2(0.68, 0.68)
+
+[node name="NinePatchRect" parent="." index="0"]
+self_modulate = Color(0.14, 0.10, 0.17, 1)
+
+[node name="Label" parent="MarginContainer" index="0"]
+theme_override_colors/font_color = Color(1, 0.9, 0.74, 1)
+
+[editable path="MarginContainer"]

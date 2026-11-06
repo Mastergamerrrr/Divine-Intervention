@@ -1,16 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1cocpwk10d25"]
+[gd_scene format=3 uid="uid://d1cocpwk10d25"]
 
-[ext_resource type="Texture2D" uid="uid://0s4o8lp1jpyo" path="res://assets/sprites/House/Back_ground.png" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://miei2gg6rgo" path="res://assets/sprites/House/main_menu_midnight.png" id="1_bqqt6"]
 [ext_resource type="Script" uid="uid://cvwsyla5iqnui" path="res://scripts/main_menu.gd" id="1_wu84c"]
 [ext_resource type="FontFile" uid="uid://cf74i3h82xqoq" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_ce3w2"]
 [ext_resource type="FontFile" uid="uid://0b4qcgqtmnis" path="res://assets/fonts/superstar_memesbruh03.ttf" id="3_n45e2"]
 [ext_resource type="AudioStream" uid="uid://22c4md0jk05e" path="res://assets/music/Untitled song (2).mp3" id="5_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cjl34qgdpqxsf" path="res://assets/sprites/character/ghost_spritesheet.png" id="6_rtw2f"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
-texture = ExtResource("1_bqqt6")
-expand_margin_left = 177.0
-expand_margin_right = 152.0
+[sub_resource type="Gradient" id="Gradient_shade"]
+offsets = PackedFloat32Array(0, 0.3, 0.59, 0.86)
+colors = PackedColorArray(0.048, 0.035, 0.064, 0.98, 0.048, 0.035, 0.064, 0.93, 0.048, 0.035, 0.064, 0.27, 0.048, 0.035, 0.064, 0.03)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_shade"]
+gradient = SubResource("Gradient_shade")
+width = 512
+height = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtw2f"]
 atlas = ExtResource("6_rtw2f")
@@ -55,14 +59,53 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp0ys"]
-bg_color = Color(0.7733656, 0.5573588, 0, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start"]
+content_margin_left = 18.0
+content_margin_right = 18.0
+bg_color = Color(0.91, 0.69, 0.43, 1)
+border_width_bottom = 3
+border_color = Color(0.65, 0.39, 0.23, 1)
 
-[node name="Main Menu" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_start_hover"]
+content_margin_left = 18.0
+content_margin_right = 18.0
+bg_color = Color(1, 0.79, 0.53, 1)
+border_width_bottom = 3
+border_color = Color(0.71, 0.46, 0.28, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.87, 0.65, 1)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exit"]
+content_margin_left = 18.0
+content_margin_right = 18.0
+bg_color = Color(0.11, 0.075, 0.13, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.37, 0.27, 0.32, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exit_hover"]
+content_margin_left = 18.0
+content_margin_right = 18.0
+bg_color = Color(0.21, 0.13, 0.18, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.71, 0.49, 0.35, 1)
+
+[node name="Main Menu" type="Control" unique_id=1768384590]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,91 +114,126 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wu84c")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0034722222
-anchor_right = 0.9965278
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
-metadata/_edit_use_anchors_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
-position = Vector2(1058, 279.00006)
-scale = Vector2(6.8704205, 6.5162506)
-sprite_frames = SubResource("SpriteFrames_lgwnu")
-autoplay = "default"
-frame_progress = 0.7690066
-
-[node name="Panel2" type="Panel" parent="Panel"]
+[node name="Backdrop" type="TextureRect" parent="." unique_id=2120192196]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = -643.0
-offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bqqt6")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Start" type="Button" parent="."]
+[node name="Shade" type="TextureRect" parent="." unique_id=532177309]
+texture_filter = 2
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -415.0
-offset_top = -75.0
-offset_right = -239.0
-offset_bottom = -15.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_ce3w2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_cp0ys")
-text = "START GAME"
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_shade")
+expand_mode = 1
 
-[node name="EXIT" type="Button" parent="."]
+[node name="GhostAnchor" type="Control" parent="." unique_id=1658321448]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -411.0
-offset_top = 10.0
-offset_right = -235.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_ce3w2")
-theme_override_styles/normal = SubResource("StyleBoxFlat_cp0ys")
-text = "EXIT"
+anchor_left = 0.81
+anchor_top = 0.3
+anchor_right = 0.81
+anchor_bottom = 0.3
+mouse_filter = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="Ghost" type="AnimatedSprite2D" parent="GhostAnchor" unique_id=118873274]
+modulate = Color(1, 0.94, 0.82, 0.93)
+position = Vector2(-468.12, 27.59999)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_lgwnu")
+autoplay = "default"
+frame_progress = 0.11887255
+
+[node name="MenuAnchor" type="Control" parent="." unique_id=1478268108]
+layout_mode = 1
+anchor_left = 0.075
+anchor_top = 0.5
+anchor_right = 0.075
+anchor_bottom = 0.5
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="MenuAnchor" unique_id=414988591]
 layout_mode = 0
-offset_left = 565.0
-offset_top = 236.0
-offset_right = 1140.0
-offset_bottom = 542.0
-theme_override_colors/font_color = Color(0.9999997, 0.7089974, 0.14670163, 1)
-theme_override_colors/font_shadow_color = Color(0.05925885, 0.029863236, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 10
-theme_override_constants/shadow_offset_y = 10
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("3_n45e2")
-theme_override_font_sizes/font_size = 96
-text = "DIvine 
-Intervention
-"
+offset_top = -132.0
+theme_override_constants/separation = 22
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Title" type="Label" parent="MenuAnchor/Content" unique_id=1313745853]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.67, 1)
+theme_override_colors/font_shadow_color = Color(0.34, 0.16, 0.15, 1)
+theme_override_constants/line_spacing = -45
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 76
+text = "Divine
+Intervention"
+
+[node name="Accent" type="ColorRect" parent="MenuAnchor/Content" unique_id=1329559304]
+custom_minimum_size = Vector2(56, 2)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+color = Color(0.71, 0.45, 0.28, 1)
+
+[node name="Actions" type="VBoxContainer" parent="MenuAnchor/Content" unique_id=770161785]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+
+[node name="Start" type="Button" parent="MenuAnchor/Content/Actions" unique_id=1345921236]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+theme_override_colors/font_color = Color(0.12, 0.07, 0.09, 1)
+theme_override_colors/font_focus_color = Color(0.12, 0.07, 0.09, 1)
+theme_override_colors/font_pressed_color = Color(0.12, 0.07, 0.09, 1)
+theme_override_colors/font_hover_color = Color(0.12, 0.07, 0.09, 1)
+theme_override_fonts/font = ExtResource("2_ce3w2")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_start")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_start_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_start_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "START GAME"
+alignment = 0
+
+[node name="Exit" type="Button" parent="MenuAnchor/Content/Actions" unique_id=1069960415]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Start")
+theme_override_colors/font_color = Color(0.84, 0.72, 0.7, 1)
+theme_override_colors/font_focus_color = Color(1, 0.88, 0.67, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.88, 0.67, 1)
+theme_override_colors/font_hover_color = Color(1, 0.88, 0.67, 1)
+theme_override_fonts/font = ExtResource("2_ce3w2")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_exit")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_exit_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_exit_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_focus")
+text = "EXIT"
+alignment = 0
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=345877815]
 stream = ExtResource("5_8ln24")
 volume_db = -7.258
 pitch_scale = 1.43
 autoplay = true
 bus = &"Music"
+
+[connection signal="pressed" from="MenuAnchor/Content/Actions/Start" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MenuAnchor/Content/Actions/Exit" to="." method="_on_exit_pressed"]
