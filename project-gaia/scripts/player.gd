@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 
 	# --- MOVE PLAYER ---
-	if is_grabbing and grabbed_object:
+	if is_grabbing:
 		# Slower movement when grabbing
 		velocity.x = move_toward(velocity.x, direction * PUSH_SPEED, SPEED)
 		
@@ -107,7 +107,7 @@ func handle_grab_input() -> void:
 
 func try_grab_object() -> void:
 	# Check for nearby RigidBody2D objects using grab area
-	var grab_area = $GrabArea
+	var grab_area := get_node_or_null("GrabArea") as Area2D
 	
 	if grab_area:
 		# Use the grab area method
@@ -138,10 +138,10 @@ func try_grab_object() -> void:
 		# Position in front of player based on facing direction
 		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
 		query.transform = Transform2D(0, global_position + facing_dir * 5)
-		query.collision_mask = 1  # Adjust to match your block's collision layer
-		query.exclude = [self]
+		query.collision_mask = 2  # Adjust to match your block's collision layer
+		query.exclude = [get_rid()]
 		
-		var results = space_state.intersect_shape(query, 1)
+		var results = space_state.intersect_shape(query)
 		
 		for result in results:
 			if result.collider is RigidBody2D:
@@ -174,9 +174,14 @@ func release_object() -> void:
 
 func update_grabbed_object() -> void:
 	if grabbed_object and is_instance_valid(grabbed_object):
-		# Calculate target position (slightly in front of player)
+		# Calculate target position (above and slightly in front of player)
 		var facing_dir = Vector2.LEFT if not animated_sprite.flip_h else Vector2.RIGHT
-		var target_position = global_position + facing_dir * 8
+		
+		# Adjust these values to change the carry position:
+		var horizontal_offset = 8   # How far in front/behind the player
+		var vertical_offset = 7   # How far above the player (negative = up)
+		
+		var target_position = global_position + (facing_dir * horizontal_offset) + (Vector2.UP * vertical_offset)
 		
 		# Smoothly move the object to target position
 		grabbed_object.global_position = target_position

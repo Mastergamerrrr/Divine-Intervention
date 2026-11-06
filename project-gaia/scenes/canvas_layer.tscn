@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dal2ayp8gtydd"]
+[gd_scene load_steps=32 format=3 uid="uid://dal2ayp8gtydd"]
 
 [ext_resource type="Script" uid="uid://dah7c4he6i26q" path="res://scripts/canvas_layer.gd" id="1_c4rma"]
 [ext_resource type="AudioStream" uid="uid://cyaluveolgwh5" path="res://assets/SFX/teleport-sound-95186.mp3" id="2_ghj5q"]
@@ -7,110 +7,68 @@
 [ext_resource type="Texture2D" uid="uid://dqojnim4lvjn2" path="res://assets/sprites/character/bear (3).png" id="4_4a2ha"]
 [ext_resource type="AudioStream" uid="uid://cye0us7gaaqmb" path="res://assets/music/Untitled song (1).mp3" id="6_4a2ha"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i58dl"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(168, 0, 24, 24)
+[ext_resource type="Texture2D" path="res://assets/sprites/House/possession_playroom.png" id="7_room"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5w214"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(96, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1m5mi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(120, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xfvq4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(144, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w4bgk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(168, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nuyhn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("2_kfwc7")
-region = Rect2(0, 48, 24, 24)
+region = Rect2(72, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_llckv"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iubfk"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(24, 72, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3r0ni"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_leap_up"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(48, 72, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fxvcf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_leap_down"]
 atlas = ExtResource("2_kfwc7")
 region = Rect2(72, 72, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2a36"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(96, 72, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ckgqs"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(120, 96, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0tjvd"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(144, 96, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qtgob"]
-atlas = ExtResource("2_kfwc7")
-region = Rect2(168, 96, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iubfk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghost"]
 animations = [{
 "frames": [{
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_i58dl")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_5w214")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_1m5mi")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_xfvq4")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_w4bgk")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_nuyhn")
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leap_up")
 }, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_llckv")
-}, {
-"duration": 1.21,
-"texture": SubResource("AtlasTexture_iubfk")
-}, {
-"duration": 1.11,
-"texture": SubResource("AtlasTexture_3r0ni")
-}, {
-"duration": 0.21,
-"texture": SubResource("AtlasTexture_fxvcf")
-}, {
-"duration": 0.71,
-"texture": SubResource("AtlasTexture_s2a36")
-}, {
-"duration": 0.61,
-"texture": SubResource("AtlasTexture_ckgqs")
-}, {
-"duration": 0.91,
-"texture": SubResource("AtlasTexture_0tjvd")
-}, {
-"duration": 0.81,
-"texture": SubResource("AtlasTexture_qtgob")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leap_down")
 }],
 "loop": false,
-"name": &"default",
-"speed": 5.0
+"name": &"leap",
+"speed": 3.2
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mg525"]
@@ -200,159 +158,144 @@ animations = [{
 "duration": 0.71,
 "texture": SubResource("AtlasTexture_a8gye")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 15.0
+"speed": 12.0
 }]
 
-[sub_resource type="Animation" id="Animation_c4rma"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatableBody2D2:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AnimatableBody2D2:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_bear"]
+atlas = ExtResource("4_4a2ha")
+region = Rect2(0, 24, 24, 24)
+filter_clip = true
 
-[sub_resource type="Animation" id="Animation_ex8h3"]
-resource_name = "fadeout"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.0333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"play"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../AnimatableBody2D2:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.16666667, 1.8333334, 1.9666667, 2.5666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-106.705, 0), Vector2(-24.314, 0), Vector2(-19.189, -11.851), Vector2(9.72, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../AnimatableBody2D2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1.8333334, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.2303834612632513]
-}
+[sub_resource type="Gradient" id="Gradient_glow"]
+offsets = PackedFloat32Array(0, 0.34, 1)
+colors = PackedColorArray(0.56, 0.79, 1, 0.55, 0.42, 0.56, 1, 0.23, 0.42, 0.56, 1, 0)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghj5q"]
-_data = {
-&"RESET": SubResource("Animation_c4rma"),
-&"fadeout": SubResource("Animation_ex8h3")
-}
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glow"]
+gradient = SubResource("Gradient_glow")
+width = 96
+height = 96
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Possession" type="CanvasLayer"]
 script = ExtResource("1_c4rma")
-metadata/_edit_horizontal_guides_ = [331.0]
-metadata/_edit_vertical_guides_ = [583.0]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -385.0
-offset_top = -199.0
-offset_right = 1643.0
-offset_bottom = 957.0
-color = Color(0.0035191667, 0.0035191681, 0.0035191672, 1)
+[node name="Matte" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.035, 0.024, 0.04, 1)
 
-[node name="AnimatableBody2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(490, 276)
-scale = Vector2(5.2083335, 5.0833335)
-sprite_frames = SubResource("SpriteFrames_iubfk")
-autoplay = "default"
-frame = 13
-frame_progress = 1.0
+[node name="Stage" type="Node2D" parent="."]
+texture_filter = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ghj5q")
-pitch_scale = 1.55
+[node name="Backdrop" type="TextureRect" parent="Stage"]
+offset_right = 576.0
+offset_bottom = 324.0
+mouse_filter = 2
+texture = ExtResource("7_room")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(583, 330)
-scale = Vector2(3.595, 3.595)
-texture = ExtResource("4_4a2ha")
-region_enabled = true
-region_rect = Rect2(0, 33.210564, 22.631653, 16.93422)
+[node name="Shadow" type="Polygon2D" parent="Stage"]
+position = Vector2(330, 256)
+color = Color(0.1, 0.04, 0.09, 0.44)
+polygon = PackedVector2Array(-23, -2, -16, -5, 16, -5, 23, -2, 23, 2, 16, 5, -16, 5, -23, 2)
 
-[node name="AnimatableBody2D" type="AnimatedSprite2D" parent="."]
+[node name="Glow" type="Sprite2D" parent="Stage"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(330, 237)
+scale = Vector2(1.6, 1.35)
+texture_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+
+[node name="Bear" type="Sprite2D" parent="Stage"]
+position = Vector2(330, 256)
+scale = Vector2(3.5, 3.5)
+texture = SubResource("AtlasTexture_bear")
+offset = Vector2(0, -11)
+
+[node name="Portal" type="Node2D" parent="Stage"]
 visible = false
-position = Vector2(582, 333.00003)
-scale = Vector2(9.43, 9.43)
+position = Vector2(140, 217)
+scale = Vector2(0.04, 0.08)
+
+[node name="Halo" type="Sprite2D" parent="Stage/Portal"]
+modulate = Color(0.73, 0.62, 1, 0.86)
+scale = Vector2(1.5, 1.7)
+texture_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+
+[node name="DoorSilhouette" type="Polygon2D" parent="Stage/Portal"]
+color = Color(0.22, 0.12, 0.37, 1)
+polygon = PackedVector2Array(-29, 39, -29, -31, -24, -31, -24, -37, -17, -37, -17, -41, 17, -41, 17, -37, 24, -37, 24, -31, 29, -31, 29, 39)
+
+[node name="DoorRim" type="Polygon2D" parent="Stage/Portal"]
+color = Color(0.72, 0.67, 1, 1)
+polygon = PackedVector2Array(-25, 39, -25, -29, -20, -29, -20, -35, -13, -35, -13, -38, 13, -38, 13, -35, 20, -35, 20, -29, 25, -29, 25, 39)
+
+[node name="Interior" type="Polygon2D" parent="Stage/Portal"]
+color = Color(0.16, 0.12, 0.32, 1)
+polygon = PackedVector2Array(-21, 36, -21, -27, -16, -27, -16, -33, 16, -33, 16, -27, 21, -27, 21, 36)
+
+[node name="LintelGlint" type="Polygon2D" parent="Stage/Portal"]
+color = Color(0.91, 0.88, 1, 1)
+polygon = PackedVector2Array(-13, -38, 13, -38, 13, -35, -13, -35)
+
+[node name="Threshold" type="Polygon2D" parent="Stage/Portal"]
+color = Color(0.87, 0.82, 1, 1)
+polygon = PackedVector2Array(-25, 36, 25, 36, 25, 39, -25, 39)
+
+[node name="InteriorGlow" type="Sprite2D" parent="Stage/Portal"]
+modulate = Color(0.82, 0.65, 1, 0.72)
+scale = Vector2(0.44, 0.72)
+texture_filter = 2
+texture = SubResource("GradientTexture2D_glow")
+
+[node name="Ghost" type="AnimatedSprite2D" parent="Stage"]
+visible = false
+modulate = Color(0.87, 0.92, 1, 0)
+position = Vector2(140, 256)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ghost")
+animation = &"run"
+offset = Vector2(0, -10)
+
+[node name="Burst" type="AnimatedSprite2D" parent="Stage"]
+visible = false
+modulate = Color(0.89, 0.85, 1, 0.92)
+position = Vector2(330, 237)
+scale = Vector2(4.2, 4.2)
 sprite_frames = SubResource("SpriteFrames_i58dl")
-autoplay = "default"
-frame = 11
-frame_progress = 1.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../ColorRect")
-libraries = {
-&"": SubResource("AnimationLibrary_ghj5q")
-}
-autoplay = "fadeout"
+[node name="Fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+[node name="ImpactSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ghj5q")
+volume_db = -8.0
+pitch_scale = 1.25
+bus = &"soundfx"
+
+[node name="PortalSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ghj5q")
+volume_db = -14.0
+pitch_scale = 0.84
+bus = &"soundfx"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_4a2ha")
-volume_db = -21.722
-pitch_scale = 2.4
+volume_db = -16.0
+pitch_scale = 1.0
 autoplay = true
+bus = &"Music"
+
+[connection signal="animation_finished" from="Stage/Burst" to="Stage/Burst" method="hide"]

@@ -15,10 +15,15 @@ var tail_pos: float
 
 var sfx: AudioStream
 var audio_player: AudioStreamPlayer
+var dialogue_hud: CanvasLayer
 
 signal dialog_finished()
 
 func _ready():
+	dialogue_hud = CanvasLayer.new()
+	dialogue_hud.layer = 10
+	add_child(dialogue_hud)
+
 	# Create audio player properly
 	audio_player = AudioStreamPlayer.new()
 	add_child(audio_player)
@@ -62,10 +67,13 @@ func _show_text_box():
 	else:
 		print("Warning: text_box doesn't have letter_displayed signal")
 	
-	get_tree().root.add_child(text_box)
-	text_box.global_position = text_box_position
-	text_box.display_text(dialog_lines[current_line_index])
+	if text_box.screen_space:
+		dialogue_hud.add_child(text_box)
+	else:
+		get_tree().root.add_child(text_box)
+		text_box.global_position = text_box_position
 	can_advance_line = false
+	text_box.display_text(dialog_lines[current_line_index])
 
 func on_text_box_finished_displaying():
 	can_advance_line = true
